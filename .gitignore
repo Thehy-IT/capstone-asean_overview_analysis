@@ -1,0 +1,93 @@
+# ==============================================================================
+# SENIOR STANDARD .gitignore FOR POWER BI & DATA ANALYTICS PROJECTS
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Power BI Project (PBIP) Specific
+# ------------------------------------------------------------------------------
+# Ignore local user settings, credentials, and connection information
+**/.pbi/localSettings.json
+**/.pbi/cache.json
+# Ignore backups and auto-recovery files
+*.pbix.bak
+*.pbit.bak
+~$*.pbix
+# (Optional) Ignore large PBIX files if you are strictly using PBIP format
+# *.pbix
+
+# ------------------------------------------------------------------------------
+# 2. Data Files (Raw, Cleaned, External) - NEVER COMMIT SENSITIVE/LARGE DATA
+# ------------------------------------------------------------------------------
+/02_Data/**/*.csv
+/02_Data/**/*.xlsx
+/02_Data/**/*.xls
+/02_Data/**/*.json
+/02_Data/**/*.parquet
+/02_Data/**/*.xml
+/02_Data/**/*.sqlite
+/02_Data/**/*.db
+# (Optional) Nếu bạn có file metadata mẫu nhỏ muốn đưa lên git, có thể uncomment dòng dưới
+# !/02_Data/Metadata/*.csv
+
+# ------------------------------------------------------------------------------
+# 3. Python & Jupyter (Data Preprocessing & Analysis)
+# ------------------------------------------------------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+.venv/
+.env/
+
+# Jupyter Notebook checkpoints & temp files
+.ipynb_checkpoints/
+
+# ------------------------------------------------------------------------------
+# 4. OS Generated Files
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ------------------------------------------------------------------------------
+# 5. IDEs and Editors
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ------------------------------------------------------------------------------
+# 6. Credentials & Environment Variables
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+secrets.json
+credentials.json
+*.pem
+*.key
+
+# ------------------------------------------------------------------------------
+# 7. Temp and Exported Files
+# ------------------------------------------------------------------------------
+# Bỏ qua các file logs và file rác
+*.log
+*.tmp
+*.temp
+*.bak
+
+# Tránh đẩy các file export dung lượng lớn trừ khi cần thiết
+# /05_PowerBI/Export/**/*.pdf
+# /05_PowerBI/Export/**/*.pptx
