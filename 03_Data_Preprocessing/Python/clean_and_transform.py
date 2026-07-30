@@ -75,7 +75,6 @@ def extract_unit(series_name):
 def clean_val(val_str):
     if not val_str:
         return None
-    # Remove spaces and commas (e.g. "20 844" or "1,234.56" -> "20844" / "1234.56")
     val_clean = val_str.replace(" ", "").replace(",", "").strip()
     if val_clean in ['..', '', 'nan', 'NaN', 'null', 'NULL', '-']:
         return None
@@ -84,12 +83,29 @@ def clean_val(val_str):
     except ValueError:
         return None
 
+def resolve_country_code(text):
+    """Accurately extract country ISO3 code using bracket regex or exact dictionary match."""
+    if not text:
+        return None
+    # 1. Try bracket extraction e.g. "Malaysia [MY]" -> "MY"
+    bracket_match = re.search(r'\[([A-Z]{2,3})\]', text)
+    if bracket_match:
+        iso_raw = bracket_match.group(1)
+        if iso_raw in COUNTRY_CODE_MAP:
+            return COUNTRY_CODE_MAP[iso_raw]
+    
+    # 2. Try exact name match
+    cleaned_text = re.sub(r'\[.*?\]', '', text).strip()
+    if cleaned_text in COUNTRY_CODE_MAP:
+        return COUNTRY_CODE_MAP[cleaned_text]
+        
+    return None
+
 def parse_tourism_file(file_path, domain):
     """
     Specialized parser for matrix-style dulich-Data.csv.
-    Generates:
-    1. Total aggregated tourism arrivals per Destination Country for Fact_ASEAN_Indicators (SeriesCode: ST.INT.ARVL.TOTL).
-    2. Detailed flow records for Fact_ASEAN_Tourism_Flow (DestinationCountryCode, OriginCountryCode, Year, Value).
+    Ignores summary rows ('Total Country (World)', 'Total Intra-ASEAN').
+    Uses precise bracket ISO extraction to prevent substring mismatch.
     """
     print(f"Processing Tourism Matrix: {os.path.basename(file_path)}")
     fact_rows = []
@@ -100,7 +116,6 @@ def parse_tourism_file(file_path, domain):
     with open(file_path, mode='r', encoding='utf-8-sig', errors='ignore') as f:
         reader = csv.reader(f)
         header = None
-        # Dynamic Header Finder
         for row in reader:
             if row and any("Destination" in c or "Origin" in c for c in row):
                 header = [c.strip() for c in row]
@@ -116,7 +131,6 @@ def parse_tourism_file(file_path, domain):
             if m:
                 year_map[idx] = int(m.group(1))
 
-        # Dictionary to aggregate total arrivals: (dest_code, year) -> total_sum
         tot_arrivals_agg = {}
         current_dest = ""
 
@@ -132,23 +146,17 @@ def parse_tourism_file(file_path, domain):
             if not current_dest or not origin_col:
                 continue
 
-            dest_code = COUNTRY_CODE_MAP.get(current_dest, None)
-            if not dest_code:
-                for k, v in COUNTRY_CODE_MAP.items():
-                    if k.lower() in current_dest.lower():
-                        dest_code = v
-                        break
-            
+            # SKIP summary rows!
+            if origin_col.startswith("Total "):
+                continue
+
+            dest_code = resolve_country_code(current_dest)
             if not dest_code:
                 continue
 
-            # Resolve Origin Code
-            origin_code = COUNTRY_CODE_MAP.get(origin_col, None)
+            origin_code = resolve_country_code(origin_col)
             if not origin_code:
-                for k, v in COUNTRY_CODE_MAP.items():
-                    if k.lower() in origin_col.lower():
-                        origin_code = v
-                        break
+                origin_code = origin_col
 
             series_code_tot = "ST.INT.ARVL.TOTL"
             indicator_dict[series_code_tot] = {
@@ -161,18 +169,17 @@ def parse_tourism_file(file_path, domain):
                 if col_idx < len(row):
                     clean_num = clean_val(row[col_idx])
                     if clean_num is not None:
-                        # Flow record (Destination -> Origin)
+                        # Flow record
                         flow_rows.append({
                             "DestinationCountryCode": dest_code,
-                            "OriginCountryCode": origin_code if origin_code else origin_col,
+                            "OriginCountryCode": origin_code,
                             "Year": yr,
                             "Visitors": clean_num
                         })
-                        # Accumulate total arrivals for Fact_ASEAN_Indicators
+                        # Accumulate total arrivals
                         key = (dest_code, yr)
                         tot_arrivals_agg[key] = tot_arrivals_agg.get(key, 0.0) + clean_num
 
-        # Populate Fact_ASEAN_Indicators with aggregated totals (Resolves composite key duplicate issue!)
         for (d_code, yr), tot_val in tot_arrivals_agg.items():
             fact_rows.append({
                 "CountryCode": d_code,
@@ -193,7 +200,7 @@ def parse_tourism_file(file_path, domain):
     return fact_rows, flow_rows, master_rows, indicator_dict
 
 def process_raw_data():
-    print("=== STARTING COMPLETE DATA PREPROCESSING (REFACTORED) ===")
+    print("=== STARTING DATA PREPROCESSING (WITH AUDITED ACCURACY) ===")
     
     fact_rows = []
     flow_rows = []
@@ -296,7 +303,7 @@ def process_raw_data():
         writer.writeheader()
         writer.writerows(fact_rows)
 
-    # 1B. FACT TOURISM FLOW TABLE (Matrix Analysis)
+    # 1B. FACT TOURISM FLOW TABLE
     flow_path = os.path.join(CLEANED_DIR, "Fact_ASEAN_Tourism_Flow.csv")
     with open(flow_path, mode='w', encoding='utf-8-sig', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=["DestinationCountryCode", "OriginCountryCode", "Year", "Visitors"])
@@ -339,7 +346,7 @@ def process_raw_data():
         writer.writeheader()
         writer.writerows(dim_indicator_rows)
 
-    # 4. DIM_DATE (Enriched with Date column for Power BI Time Intelligence DAX support)
+    # 4. DIM_DATE
     dim_date_path = os.path.join(CLEANED_DIR, "Dim_Date.csv")
     dim_date_rows = []
     for yr in sorted(list(years_set)):
