@@ -1,0 +1,163 @@
+// =========================================================================
+// POWER BI DAX MEASURE LIBRARY (REFACTORED & VERIFIED)
+// Project: capstone-asean_overview_analysis
+// Author: 20-Year Senior BI Solution Architect
+// =========================================================================
+
+// -------------------------------------------------------------------------
+// SECTION 1: CORE AGGREGATION & BASE MEASURES
+// -------------------------------------------------------------------------
+
+// Total Record Count
+[Total Records] = 
+COUNTROWS(Fact_ASEAN_Indicators)
+
+// Total Value (Generic Sum)
+[Total Indicator Value] = 
+SUM(Fact_ASEAN_Indicators[Value])
+
+// Average Value (Generic Average)
+[Avg Indicator Value] = 
+AVERAGE(Fact_ASEAN_Indicators[Value])
+
+
+// -------------------------------------------------------------------------
+// SECTION 2: ECONOMIC DOMAIN MEASURES (GDP, Inflation, Capital)
+// -------------------------------------------------------------------------
+
+// GDP Current USD
+[GDP (Current US$)] = 
+CALCULATE(
+    SUM(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "NY.GDP.MKTP.CD"
+)
+
+// GDP Growth Rate (%)
+[GDP Growth Rate (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "NY.GDP.MKTP.KD.ZG"
+)
+
+// GDP Per Capita (USD)
+[GDP Per Capita (US$)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "NY.GDP.PCAP.CD"
+)
+
+// Inflation Rate (%)
+[Inflation Rate (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "FP.CPI.TOTL.ZG"
+)
+
+
+// -------------------------------------------------------------------------
+// SECTION 3: DEMOGRAPHICS, SOCIAL & TOURISM MEASURES
+// -------------------------------------------------------------------------
+
+// Total Population
+[Total Population] = 
+CALCULATE(
+    SUM(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.POP.TOTL"
+)
+
+// Internet Usage (% Population)
+[Internet Users (% Pop)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "IT.NET.USER.ZS"
+)
+
+// Total Tourism Visitor Arrivals (Aggregated Fact)
+[Tourism Visitors Total] = 
+CALCULATE(
+    SUM(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "ST.INT.ARVL.TOTL"
+)
+
+// Tourism Visitors Flow (Matrix Flow Fact Table)
+[Tourism Visitors Flow] = 
+SUM(Fact_ASEAN_Tourism_Flow[Visitors])
+
+
+// -------------------------------------------------------------------------
+// SECTION 4: TIME INTELLIGENCE & YOY COMPARISONS (Dim_Date[Date] Supported)
+// -------------------------------------------------------------------------
+
+// Prior Year Value
+[Indicator Value PY] = 
+CALCULATE(
+    [Total Indicator Value],
+    SAMEPERIODLASTYEAR(Dim_Date[Date])
+)
+
+// Year-over-Year (YoY) Change
+[Indicator Value YoY Change] = 
+VAR _Current = [Total Indicator Value]
+VAR _Previous = [Indicator Value PY]
+RETURN
+IF(
+    NOT ISBLANK(_Current) && NOT ISBLANK(_Previous),
+    _Current - _Previous,
+    BLANK()
+)
+
+// Year-over-Year (YoY) Growth %
+[Indicator Value YoY %] = 
+VAR _Current = [Total Indicator Value]
+VAR _Previous = [Indicator Value PY]
+RETURN
+DIVIDE(
+    _Current - _Previous,
+    _Previous,
+    0
+)
+
+// GDP YoY Growth Rate %
+[GDP YoY %] = 
+VAR _CurrentGDP = [GDP (Current US$)]
+VAR _PreviousGDP = CALCULATE([GDP (Current US$)], SAMEPERIODLASTYEAR(Dim_Date[Date]))
+RETURN
+DIVIDE(_CurrentGDP - _PreviousGDP, _PreviousGDP, 0)
+
+
+// -------------------------------------------------------------------------
+// SECTION 5: RANKING & BENCHMARKING (DYNAMIC RANKING ACROSS ASEAN)
+// -------------------------------------------------------------------------
+
+// GDP Rank within ASEAN
+[GDP Rank ASEAN] = 
+IF(
+    ISINSCOPE(Dim_Country[CountryName]),
+    RANKX(
+        ALLSELECTED(Dim_Country),
+        [GDP (Current US$)],
+        ,
+        DESC,
+        Dense
+    ),
+    BLANK()
+)
+
+// ASEAN GDP Share (%)
+[GDP Share of ASEAN (%)] = 
+VAR _CountryGDP = [GDP (Current US$)]
+VAR _TotalASEANGDP = CALCULATE([GDP (Current US$)], ALL(Dim_Country))
+RETURN
+DIVIDE(_CountryGDP, _TotalASEANGDP, 0)
+
+
+// -------------------------------------------------------------------------
+// SECTION 6: DYNAMIC KPI HEADER & TITLE MEASURE
+// -------------------------------------------------------------------------
+
+// Dynamic Title for Dashboard Visuals
+[Dynamic Dashboard Title] = 
+VAR _SelectedDomain = SELECTEDVALUE(Dim_Indicator[Domain], "Tất cả các mảng phát triển")
+VAR _SelectedYear = SELECTEDVALUE(Dim_Date[Year], "Giai đoạn 2015-2025")
+RETURN
+"Báo cáo Chi tiết: " & _SelectedDomain & " - " & _SelectedYear

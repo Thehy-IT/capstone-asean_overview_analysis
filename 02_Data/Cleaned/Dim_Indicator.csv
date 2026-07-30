@@ -1,0 +1,66 @@
+﻿SeriesCode,SeriesName,Domain,UnitOfMeasure
+IT.NET.USER.ZS,Individuals using the Internet (% of population),Công nghệ & Hạ tầng số,% of population
+IT.CEL.SETS.P2,Mobile cellular subscriptions (per 100 people),Công nghệ & Hạ tầng số,per 100 people
+IT.NET.BBND.P2,Fixed broadband subscriptions (per 100 people),Công nghệ & Hạ tầng số,per 100 people
+IT.NET.SECR.P6,Secure Internet servers (per 1 million people),Công nghệ & Hạ tầng số,per 1 million people
+SP.POP.TOTL.FE.IN,"Population, female",Dân số & Nhân khẩu học,Absolute Unit
+SP.POP.TOTL.FE.ZS,"Population, female (% of total population)",Dân số & Nhân khẩu học,% of total population
+SP.POP.TOTL.MA.IN,"Population, male",Dân số & Nhân khẩu học,Absolute Unit
+SP.POP.TOTL.MA.ZS,"Population, male (% of total population)",Dân số & Nhân khẩu học,% of total population
+SP.POP.TOTL,"Population, total",Dân số & Nhân khẩu học,Absolute Unit
+SP.POP.GROW,Population growth (annual %),Dân số & Nhân khẩu học,annual %
+SP.URB.TOTL.IN.ZS,Urban population (% of total population),Dân số & Nhân khẩu học,% of total population
+SP.DYN.TFRT.IN,"Fertility rate, total (births per woman)",Dân số & Nhân khẩu học,births per woman
+SP.POP.0014.TO.ZS,Population ages 0-14 (% of total population),Dân số & Nhân khẩu học,% of total population
+SP.POP.65UP.TO.ZS,Population ages 65 and above (% of total population),Dân số & Nhân khẩu học,% of total population
+SP.POP.DPND,Age dependency ratio (% of working-age population),Dân số & Nhân khẩu học,% of working-age population
+SP.POP.DPND.OL,"Age dependency ratio, old (% of working-age population)",Dân số & Nhân khẩu học,% of working-age population
+SP.POP.DPND.YG,"Age dependency ratio, young (% of working-age population)",Dân số & Nhân khẩu học,% of working-age population
+ST.INT.ARVL.TOTL,Tổng lượt khách du lịch quốc tế nhập cảnh từ các nước ASEAN,Du lịch & Dịch vụ,Lượt khách (Person)
+BX.KLT.DINV.CD.WD,"Foreign direct investment, net inflows (BoP, current US$)",Đầu tư trực tiếp nước ngoài (FDI),"BoP, current US$"
+BM.KLT.DINV.CD.WD,"Foreign direct investment, net outflows (BoP, current US$)",Đầu tư trực tiếp nước ngoài (FDI),"BoP, current US$"
+BX.KLT.DINV.WD.GD.ZS,"Foreign direct investment, net inflows (% of GDP)",Đầu tư trực tiếp nước ngoài (FDI),% of GDP
+SE.ADT.LITR.ZS,"Literacy rate, adult total (% of people ages 15 and above)",Giáo dục & Đào tạo,% of people ages 15 and above
+SE.PRM.ENRR,"School enrollment, primary (% gross)",Giáo dục & Đào tạo,% gross
+SE.PRM.ENRR.FE,"School enrollment, primary, female (% gross)",Giáo dục & Đào tạo,% gross
+SE.PRM.ENRR.MA,"School enrollment, primary, male (% gross)",Giáo dục & Đào tạo,% gross
+SE.SEC.ENRR,"School enrollment, secondary (% gross)",Giáo dục & Đào tạo,% gross
+SE.SEC.ENRR.FE,"School enrollment, secondary, female (% gross)",Giáo dục & Đào tạo,% gross
+SE.SEC.ENRR.MA,"School enrollment, secondary, male (% gross)",Giáo dục & Đào tạo,% gross
+SE.TER.ENRR,"School enrollment, tertiary (% gross)",Giáo dục & Đào tạo,% gross
+SE.TER.ENRR.FE,"School enrollment, tertiary, female (% gross)",Giáo dục & Đào tạo,% gross
+SE.TER.ENRR.MA,"School enrollment, tertiary, male (% gross)",Giáo dục & Đào tạo,% gross
+SE.XPD.TOTL.GD.ZS,"Government expenditure on education, total (% of GDP)",Giáo dục & Đào tạo,% of GDP
+NY.GDP.MKTP.CD,GDP (current US$),Kinh tế & GDP,current US$
+NY.GDP.MKTP.KD.ZG,GDP growth (annual %),Kinh tế & GDP,annual %
+NY.GDP.PCAP.CD,GDP per capita (current US$),Kinh tế & GDP,current US$
+FP.CPI.TOTL.ZG,"Inflation, consumer prices (annual %)",Kinh tế & GDP,annual %
+GC.DOD.TOTL.GD.ZS,"Central government debt, total (% of GDP)",Kinh tế & GDP,% of GDP
+NE.GDI.TOTL.ZS,Gross capital formation (% of GDP),Kinh tế & GDP,% of GDP
+NY.GNS.ICTR.ZS,Gross savings (% of GDP),Kinh tế & GDP,% of GDP
+EG.USE.PCAP.KG.OE,Energy use (kg of oil equivalent per capita),Môi trường & Năng lượng,kg of oil equivalent per capita
+EG.ELC.ACCS.ZS,Access to electricity (% of population),Môi trường & Năng lượng,% of population
+EG.FEC.RNEW.ZS,Renewable energy consumption (% of total final energy consumption),Môi trường & Năng lượng,% of total final energy consumption
+AG.LND.FRST.ZS,Forest area (% of land area),Môi trường & Năng lượng,% of land area
+NY.ADJ.DCO2.GN.ZS,Adjusted savings: carbon dioxide damage (% of GNI),Môi trường & Năng lượng,% of GNI
+NE.EXP.GNFS.CD,Exports of goods and services (current US$),Thương mại & Xuất nhập khẩu,current US$
+NE.IMP.GNFS.CD,Imports of goods and services (current US$),Thương mại & Xuất nhập khẩu,current US$
+TX.VAL.MRCH.CD.WT,Merchandise exports (current US$),Thương mại & Xuất nhập khẩu,current US$
+TM.VAL.MRCH.CD.WT,Merchandise imports (current US$),Thương mại & Xuất nhập khẩu,current US$
+TG.VAL.TOTL.GD.ZS,Merchandise trade (% of GDP),Thương mại & Xuất nhập khẩu,% of GDP
+NE.TRD.GNFS.ZS,Trade (% of GDP),Thương mại & Xuất nhập khẩu,% of GDP
+SL.TLF.CACT.ZS,"Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)",Lao động & Việc làm,% of total population ages 15+
+SL.UEM.TOTL.ZS,"Unemployment, total (% of total labor force) (modeled ILO estimate)",Lao động & Việc làm,% of total labor force
+SL.UEM.1524.ZS,"Unemployment, youth total (% of total labor force ages 15-24) (modeled ILO estimate)",Lao động & Việc làm,% of total labor force ages 15-24
+SL.AGR.EMPL.ZS,Employment in agriculture (% of total employment) (modeled ILO estimate),Lao động & Việc làm,% of total employment
+SL.IND.EMPL.ZS,Employment in industry (% of total employment) (modeled ILO estimate),Lao động & Việc làm,% of total employment
+SL.SRV.EMPL.ZS,Employment in services (% of total employment) (modeled ILO estimate),Lao động & Việc làm,% of total employment
+SP.DYN.LE00.IN,"Life expectancy at birth, total (years)",Y tế & Sức khỏe,years
+SH.XPD.CHEX.GD.ZS,Current health expenditure (% of GDP),Y tế & Sức khỏe,% of GDP
+SH.DYN.MORT,"Mortality rate, under-5 (per 1,000 live births)",Y tế & Sức khỏe,"per 1,000 live births"
+SH.DYN.MORT.FE,"Mortality rate, under-5, female (per 1,000 live births)",Y tế & Sức khỏe,"per 1,000 live births"
+SH.DYN.MORT.MA,"Mortality rate, under-5, male (per 1,000 live births)",Y tế & Sức khỏe,"per 1,000 live births"
+SH.STA.MMRT,"Maternal mortality ratio (modeled estimate, per 100,000 live births)",Y tế & Sức khỏe,"modeled estimate, per 100,000 live births"
+SH.STA.MMRT.NE,"Maternal mortality ratio (national estimate, per 100,000 live births)",Y tế & Sức khỏe,"national estimate, per 100,000 live births"
+SH.MED.BEDS.ZS,"Hospital beds (per 1,000 people)",Y tế & Sức khỏe,"per 1,000 people"
+SH.MED.PHYS.ZS,"Physicians (per 1,000 people)",Y tế & Sức khỏe,"per 1,000 people"

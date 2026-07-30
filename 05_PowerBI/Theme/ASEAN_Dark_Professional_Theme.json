@@ -1,0 +1,53 @@
+{
+  "name": "ASEAN Professional Dark Theme",
+  "dataColors": [
+    "#0284C7",
+    "#10B981",
+    "#F59E0B",
+    "#EF4444",
+    "#8B5CF6",
+    "#06B6D4",
+    "#EC4899",
+    "#14B8A6",
+    "#F97316",
+    "#6366F1"
+  ],
+  "background": "#0F172A",
+  "foreground": "#F8FAFC",
+  "tableAccent": "#0284C7",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "outspacePane": [
+          {
+            "backgroundColor": { "solid": { "color": "#0F172A" } },
+            "foregroundColor": { "solid": { "color": "#F8FAFC" } }
+          }
+        ],
+        "background": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#1E293B" } },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#334155" } },
+            "radius": 8
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontColor": { "solid": { "color": "#F8FAFC" } },
+            "fontSize": 12,
+            "fontFamily": "Segoe UI",
+            "bold": true
+          }
+        ]
+      }
+    }
+  }
+}
