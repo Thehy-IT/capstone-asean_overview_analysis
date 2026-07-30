@@ -1,0 +1,706 @@
+Country Name,Country Code,Series Name,Series Code,2015 [YR2015],2016 [YR2016],2017 [YR2017],2018 [YR2018],2019 [YR2019],2020 [YR2020],2021 [YR2021],2022 [YR2022],2023 [YR2023],2024 [YR2024],2025 [YR2025]
+Brunei Darussalam,BRN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,..,..,..,..,..,..,..,..,..,..,..
+Brunei Darussalam,BRN,"School enrollment, primary (% gross)",SE.PRM.ENRR,104.185794604632,105.726377387079,104.567053854277,104.179996298549,103.033008586959,102.709633966272,101.387926832397,99.134912983916,96.9292188716198,94.8207871800668,..
+Brunei Darussalam,BRN,"School enrollment, primary, female (% gross)",SE.PRM.ENRR.FE,105.549867988577,107.254623044097,105.840786132273,105.536255858836,104.468201754386,103.881500702779,102.340118608751,100.290344718366,97.6206662134602,95.0290408665167,..
+Brunei Darussalam,BRN,"School enrollment, primary, male (% gross)",SE.PRM.ENRR.MA,102.933465248578,104.329783510824,103.399777395528,102.930719219829,101.713623305277,101.631434966426,100.508340736354,98.0659340659341,96.29057187017,94.6285383054777,..
+Brunei Darussalam,BRN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,92.8161697387695,90.0986175537109,88.6814727783203,89.1818084716797,88.2910308837891,86.6857810342997,..,..,91.8381544399811,..,..
+Brunei Darussalam,BRN,"School enrollment, secondary, female (% gross)",SE.SEC.ENRR.FE,95.8460998535156,93.33837890625,91.7844619750977,92.0042572021484,91.2721405029297,89.4443214522913,..,..,93.2725572697522,..,..
+Brunei Darussalam,BRN,"School enrollment, secondary, male (% gross)",SE.SEC.ENRR.MA,90.1488571166992,87.226432800293,85.900146484375,86.6286468505859,85.5654983520508,84.1428571428571,..,..,90.5140045746839,..,..
+Brunei Darussalam,BRN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,28.6641292572021,28.6644096374512,31.2433910195239,27.9285989469629,27.7715019255456,27.4692556634304,27.4258937503291,31.1925368707703,36.4182725443167,..,..
+Brunei Darussalam,BRN,"School enrollment, tertiary, female (% gross)",SE.TER.ENRR.FE,37.9300498962402,37.6065483093262,40.9387222946545,36.2713402529635,36.2713402529635,35.5832763727501,35.2920922759096,39.8634180218763,44.5215869311552,..,..
+Brunei Darussalam,BRN,"School enrollment, tertiary, male (% gross)",SE.TER.ENRR.MA,20.744649887085,21.1032104492188,23.149725534734,21.024220803605,20.7420610722829,20.7081494138307,20.7587548638132,23.6294800605755,29.1590445826582,..,..
+Brunei Darussalam,BRN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,..,4.42539978027344,..,..,..,..,..,..,..,..,..
+Cambodia,KHM,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,80.5299987792969,..,..,..,87.6600036621094,82.5510430822563,71.9300003051758,..,..,..,..
+Cambodia,KHM,"School enrollment, primary (% gross)",SE.PRM.ENRR,103.759672683505,101.734266788056,100.69503505776,99.6739108443274,100.480819545412,107.021018981934,105.282475574163,106.331544381276,107.039014463223,108.971332849667,..
+Cambodia,KHM,"School enrollment, primary, female (% gross)",SE.PRM.ENRR.FE,102.195360749337,100.390272737799,99.0886822280737,98.0772877016142,98.6792042848618,105.079322814941,104.104167820216,106.427598526169,104.901075458282,106.706506214922,..
+Cambodia,KHM,"School enrollment, primary, male (% gross)",SE.PRM.ENRR.MA,105.262329438823,103.024508500353,102.235996747116,101.200026768493,102.201439604311,108.880889892578,106.413669721355,106.239215266906,109.094020284775,111.146219714642,..
+Cambodia,KHM,"School enrollment, secondary (% gross)",SE.SEC.ENRR,..,..,48.9424458707368,50.199099715459,49.7344518908574,51.8196983337402,54.2809323078227,55.1346812645406,56.7864734981041,58.7893230437643,..
+Cambodia,KHM,"School enrollment, secondary, female (% gross)",SE.SEC.ENRR.FE,..,..,51.2054747282757,53.0927446861047,53.3177080845995,54.5285415649414,59.1888520896695,59.850293235261,60.3343523907692,63.098667348683,..
+Cambodia,KHM,"School enrollment, secondary, male (% gross)",SE.SEC.ENRR.MA,..,..,46.7396418517422,47.3937876265308,46.291027727212,49.2192115783691,49.5855454730085,50.6193227367582,53.3831989895347,54.6451764707084,..
+Cambodia,KHM,"School enrollment, tertiary (% gross)",SE.TER.ENRR,13.615484963166,..,12.5181529981862,13.2671737077763,12.9409846754696,13.8767573747135,13.5005634857238,14.6069513022825,17.4362364390629,21.4437426836662,..
+Cambodia,KHM,"School enrollment, tertiary, female (% gross)",SE.TER.ENRR.FE,12.0145785041136,..,12.1344359974038,13.1598079499194,14.5145863362757,14.7938127420907,13.6561596079933,13.7625064842526,18.7855793507951,22.6925861944058,..
+Cambodia,KHM,"School enrollment, tertiary, male (% gross)",SE.TER.ENRR.MA,15.1867156107376,..,12.8981590226799,13.3747621730465,11.3454330995231,12.9473038915107,13.3444704361961,15.4474004503566,16.1011763576224,20.2136211480019,..
+Cambodia,KHM,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,..,..,..,1.60336995124817,2.13345387893978,2.2476462495972,1.96232691812756,1.95793279576416,2.1809128340295,..,..
+Indonesia,IDN,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,95.2200012207031,95.379997253418,..,95.6600036621094,..,96,..,..,..,..,..
+Indonesia,IDN,"School enrollment, primary (% gross)",SE.PRM.ENRR,107.983525766989,105.922391949136,104.382521256166,103.299542869882,101.264685825869,100.951933675872,100.309665446849,98.7008730463611,98.1566275726904,100.036318150714,100.371428697375
+Indonesia,IDN,"School enrollment, primary, female (% gross)",SE.PRM.ENRR.FE,106.071836024553,103.913111850824,102.395366620706,101.347509721216,99.5440095250085,99.1283586687451,98.4981107931614,96.8813148085376,96.6062541740073,98.5643951898382,99.0626948866048
+Indonesia,IDN,"School enrollment, primary, male (% gross)",SE.PRM.ENRR.MA,109.797355099176,107.829361985985,106.269076854439,105.153162865339,102.898656364759,102.683583606447,102.029842697636,100.428546184023,99.628643930748,101.43373630578,101.61380480346
+Indonesia,IDN,"School enrollment, secondary (% gross)",SE.SEC.ENRR,87.8423207929976,87.8191791728036,90.9455391241064,92.8120739600443,94.9467044891028,96.9345779132931,97.8441479813619,97.8167602714893,96.0002120295081,98.836444459078,97.1701841816
+Indonesia,IDN,"School enrollment, secondary, female (% gross)",SE.SEC.ENRR.FE,88.012649448813,89.0999579586062,91.8476348896733,93.7541308046929,95.9420767172654,97.2526258977195,98.3041172391285,98.185474262024,97.4046705284819,98.6691707526139,95.4767374950021
+Indonesia,IDN,"School enrollment, secondary, male (% gross)",SE.SEC.ENRR.MA,87.6805844058321,86.6033723579406,90.0894692368084,91.9182546061094,94.002289337213,96.6327959191812,97.4076240173433,97.4667372645608,94.6665490281411,98.9953210778041,98.7786268028824
+Indonesia,IDN,"School enrollment, tertiary (% gross)",SE.TER.ENRR,32.4590200433758,34.8307173410877,35.967012362631,36.1494878042588,37.3230862728703,38.1650601406923,40.6293239880732,42.3260385456152,44.8813034886441,..,..
+Indonesia,IDN,"School enrollment, tertiary, female (% gross)",SE.TER.ENRR.FE,34.5220912776747,37.2604595362436,38.5952407318475,38.8659567828988,39.5239845592779,40.8939254732285,44.0458339836419,46.6107282434441,49.8897505872353,..,..
+Indonesia,IDN,"School enrollment, tertiary, male (% gross)",SE.TER.ENRR.MA,30.4981659300184,32.5202001733187,33.4663266882317,33.5640873664656,35.2283379088062,35.5680901166469,37.3788928461553,38.2511438594208,40.1195230358183,..,..
+Indonesia,IDN,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,3.58361005783081,1.21023452496964,1.05324382490056,0.994436460846179,0.964399077622927,1.01593221347809,1.03221750658374,0.863943349575907,1.27517088245674,..,..
+Lao PDR,LAO,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,84.6600036621094,..,73.7200012207031,..,..,..,..,..,75.6399993896484,..,..
+Lao PDR,LAO,"School enrollment, primary (% gross)",SE.PRM.ENRR,114.302879123065,110.502812681423,107.444972491228,104.275413158198,101.978544594664,100.27766790602,99.1101994809825,95.6988495024876,95.0382534939216,93.8514019047136,93.1435250140429
+Lao PDR,LAO,"School enrollment, primary, female (% gross)",SE.PRM.ENRR.FE,111.54155100435,107.841115942933,105.157874834562,102.032570759679,100.015078651322,98.5599033492181,97.7110569939332,94.666811018632,94.1378932139742,93.0919887138028,92.6368956782226
+Lao PDR,LAO,"School enrollment, primary, male (% gross)",SE.PRM.ENRR.MA,116.976335712283,113.080301788454,109.65905673846,106.445190699471,103.875926634246,101.935308366905,100.458963560919,96.6930019128241,95.9050125823636,94.5820260112515,93.6307306130113
+Lao PDR,LAO,"School enrollment, secondary (% gross)",SE.SEC.ENRR,62.2967936554274,64.7630026961054,66.0411073482017,66.1528570578416,64.986385458831,62.4493058083911,59.8530595325837,56.8782044614964,54.4330611689851,51.8523602531839,50.5430058959811
+Lao PDR,LAO,"School enrollment, secondary, female (% gross)",SE.SEC.ENRR.FE,59.772232688381,62.2666985609989,63.5469120681911,63.8298251272908,62.7755100424821,60.6465219892194,58.3834691492585,55.9171927545616,53.2568302183413,50.9977217073246,50.0541759937577
+Lao PDR,LAO,"School enrollment, secondary, male (% gross)",SE.SEC.ENRR.MA,64.7493745875347,67.1857252494244,68.4634290227306,68.41176561141,67.134747707525,64.1987528077172,61.2779237030297,57.8099246443223,55.5731571165626,52.6802336055729,51.016086161714
+Lao PDR,LAO,"School enrollment, tertiary (% gross)",SE.TER.ENRR,18.1574846273063,17.0880719461771,15.4112577339384,14.4969749098337,13.7404020217342,12.561911777868,12.4396649191011,13.677811550152,14.8841695785522,..,..
+Lao PDR,LAO,"School enrollment, tertiary, female (% gross)",SE.TER.ENRR.FE,17.8083221104104,17.1474893352804,15.8843137478738,15.1543085945674,14.6763594753094,13.5463160686123,13.3323283839577,13.8471889323409,12.6891498565674,..,..
+Lao PDR,LAO,"School enrollment, tertiary, male (% gross)",SE.TER.ENRR.MA,18.5012162681195,17.0296794752275,14.9480502786115,13.8557656502131,12.8285905545158,11.6035761841354,11.5705332050467,13.5127752678245,17.0260696411133,..,..
+Lao PDR,LAO,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2.73689787884215,2.77442976110388,2.49797261414021,2.33501229018316,2.12201393748998,1.91597273223857,1.85949176876536,1.46083440434069,1.23375160355741,..,..
+Malaysia,MYS,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,..,94.879997253418,95.0800018310547,94.8499984741211,94.9700012207031,..,..,95.7699966430664,..,..,..
+Malaysia,MYS,"School enrollment, primary (% gross)",SE.PRM.ENRR,95.6311535513474,96.2219697129545,96.2574604579347,95.7761544783431,94.3275054202176,93.1800129351047,92.5769881927004,89.7872630978958,91.5021106685076,90.3595586965317,..
+Malaysia,MYS,"School enrollment, primary, female (% gross)",SE.PRM.ENRR.FE,96.9819919750609,97.8841023454709,97.9267564303985,97.5449902186705,95.9157723835808,95.0778875200045,94.330409095258,90.3477318263677,92.6516208160676,90.3936077644114,..
+Malaysia,MYS,"School enrollment, primary, male (% gross)",SE.PRM.ENRR.MA,94.3846722277015,94.685473112976,94.7124241837928,94.1395773678786,92.8629373672584,91.4354968246305,90.9620714201793,89.2691588293836,90.4333699733052,90.3276653777399,..
+Malaysia,MYS,"School enrollment, secondary (% gross)",SE.SEC.ENRR,81.5115814208984,79.8283920288086,78.8863677978516,74.4872817993164,75.3229827880859,73.2459411621094,74.9618181140898,78.8341986282999,79.4472788704033,80.2757406864183,..
+Malaysia,MYS,"School enrollment, secondary, female (% gross)",SE.SEC.ENRR.FE,87.3510665893555,84.7308502197266,83.2714004516602,79.4510116577148,79.9411773681641,77.4047622680664,78.5013407999187,82.2986504789168,82.6422941806466,81.5357622372136,..
+Malaysia,MYS,"School enrollment, secondary, male (% gross)",SE.SEC.ENRR.MA,76.2811889648438,75.4396133422852,74.9579086303711,70.0273895263672,71.1548614501953,69.4781494140625,71.7330778080225,75.6526502809747,76.4987815682604,79.1106347401942,..
+Malaysia,MYS,"School enrollment, tertiary (% gross)",SE.TER.ENRR,44.289909239243,45.4034659569972,42.293211695146,43.3100279300797,40.8082966813944,39.7445667367633,38.1899993008367,36.9853099297291,37.2745812491757,38.5013945445142,..
+Malaysia,MYS,"School enrollment, tertiary, female (% gross)",SE.TER.ENRR.FE,52.4177910183718,51.5270260861918,47.9160265205655,50.3532516763836,48.4906218464001,47.2760564169745,45.2424409799554,43.6954292890075,44.304019878896,45.8486961220143,..
+Malaysia,MYS,"School enrollment, tertiary, male (% gross)",SE.TER.ENRR.MA,37.1951864333357,40.1123858047382,37.4691314138237,37.2784823195711,34.209677479616,33.2329934825694,32.0071354262667,31.0331221435143,30.9802092564091,31.8631997038357,..
+Malaysia,MYS,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,4.89487981796265,4.75191020965576,4.6753101348877,4.47865009307861,4.15775012969971,3.91176009178162,4.26109393398867,3.49933781956284,3.51481008529663,..,..
+Myanmar,MMR,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,..,84.7799987792969,..,95.8142859113662,89.0699996948242,93.527395549521,..,..,..,..,..
+Myanmar,MMR,"School enrollment, primary (% gross)",SE.PRM.ENRR,..,119.916152954102,121.799392700195,120.214569091797,..,..,..,..,..,..,..
+Myanmar,MMR,"School enrollment, primary, female (% gross)",SE.PRM.ENRR.FE,..,120.374160766602,120.820251464844,119.843170166016,..,..,..,..,..,..,..
+Myanmar,MMR,"School enrollment, primary, male (% gross)",SE.PRM.ENRR.MA,..,119.48104095459,122.729553222656,120.567283630371,..,..,..,..,..,..,..
+Myanmar,MMR,"School enrollment, secondary (% gross)",SE.SEC.ENRR,..,67.7588500976562,72.3457412719727,77.0191497802734,..,..,..,..,..,..,..
+Myanmar,MMR,"School enrollment, secondary, female (% gross)",SE.SEC.ENRR.FE,..,72.2770767211914,77.0976104736328,81.8814926147461,..,..,..,..,..,..,..
+Myanmar,MMR,"School enrollment, secondary, male (% gross)",SE.SEC.ENRR.MA,..,63.4468193054199,67.8118896484375,72.3807601928711,..,..,..,..,..,..,..
+Myanmar,MMR,"School enrollment, tertiary (% gross)",SE.TER.ENRR,..,..,..,20.3723297119141,..,..,..,..,..,..,..
+Myanmar,MMR,"School enrollment, tertiary, female (% gross)",SE.TER.ENRR.FE,..,..,..,24.3676490783691,..,..,..,..,..,..,..
+Myanmar,MMR,"School enrollment, tertiary, male (% gross)",SE.TER.ENRR.MA,..,..,..,16.5399894714356,..,..,..,..,..,..,..
+Myanmar,MMR,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,..,..,2.16652989387512,1.99249005317688,1.99976003170013,..,..,..,..,..,..
+Philippines,PHL,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,98.1800003051758,..,..,..,96.2799987792969,98.4700012207031,..,..,..,..,..
+Philippines,PHL,"School enrollment, primary (% gross)",SE.PRM.ENRR,103.408354699272,101.721937186986,99.3666730080757,94.5541345217085,93.0076871274695,93.2822386485839,88.8345145801337,90.6131438325611,92.4462107015215,94.0330906383194,..
+Philippines,PHL,"School enrollment, primary, female (% gross)",SE.PRM.ENRR.FE,102.412706991717,100.373420176464,97.8018230026456,92.7170550438659,91.2141505731944,91.4407644850532,87.0400495286934,88.6871185960354,90.2603080599647,92.1194459029965,..
+Philippines,PHL,"School enrollment, primary, male (% gross)",SE.PRM.ENRR.MA,104.336245717918,102.990561732699,100.849889755582,96.309438477643,94.7359315316223,95.0669168751738,90.5724105444966,92.477469014773,94.564628678218,95.8880950966532,..
+Philippines,PHL,"School enrollment, secondary (% gross)",SE.SEC.ENRR,82.0085254812081,82.7837574272484,80.9227600097656,79.3622469757001,85.3821865979599,87.9419879481158,85.8666475631511,92.291271176651,91.5493424610693,85.2945085684493,..
+Philippines,PHL,"School enrollment, secondary, female (% gross)",SE.SEC.ENRR.FE,85.5248692113886,86.0883666592253,84.2528228759766,82.4822175600847,87.6308727761127,89.6099009594054,87.9361520075232,93.8565182415521,92.2052107888903,86.1154588164975,..
+Philippines,PHL,"School enrollment, secondary, male (% gross)",SE.SEC.ENRR.MA,78.7252974574586,79.6621327386656,77.7463302612305,76.3576913399141,83.1943648121134,86.3085595704775,83.846098770924,90.7663228572526,90.9115557265909,84.4967272459257,..
+Philippines,PHL,"School enrollment, tertiary (% gross)",SE.TER.ENRR,35.8745887819664,38.3447414525513,33.6841018682349,28.1166228592308,30.0548680110365,31.6317598507085,33.6166173848126,38.4011392706768,44.2394203278519,47.4134996154186,..
+Philippines,PHL,"School enrollment, tertiary, female (% gross)",SE.TER.ENRR.FE,41.0613047431901,43.5571209645523,38.286150336618,31.8172905767181,33.6724362657156,34.9776942092469,38.0290931957121,44.8304989112463,50.9499907329313,53.2985582335097,..
+Philippines,PHL,"School enrollment, tertiary, male (% gross)",SE.TER.ENRR.MA,31.0182503926315,33.4151070319383,29.2897323063218,24.5466556895257,26.5245528357297,28.3358038010199,29.2642161028574,32.0541368625707,37.6196734791632,41.6207344841957,..
+Philippines,PHL,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2.83052303785203,3.30128109042443,3.96384087403915,3.85502760745456,3.40748649142134,3.85829051308063,3.87249754784633,3.57960089528426,3.6236863467978,3.92501087473821,3.96922646675346
+Singapore,SGP,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,96.8300018310547,97.0500030517578,97.1999969482422,97.3399963378906,97.4800033569336,97.129997253418,97.6500015258789,..,..,..,..
+Singapore,SGP,"School enrollment, primary (% gross)",SE.PRM.ENRR,..,100.773205741627,100.626953870432,100.261866636903,100.692578354355,100.53590938338,99.8746450408043,99.5780376637324,100.245139192048,..,..
+Singapore,SGP,"School enrollment, primary, female (% gross)",SE.PRM.ENRR.FE,..,100.692864709049,100.571724204453,100.224944203293,100.684973610952,100.51294317759,99.6871449794634,99.5866584461484,100.092255694849,..,..
+Singapore,SGP,"School enrollment, primary, male (% gross)",SE.PRM.ENRR.MA,..,100.850347225117,100.679815358791,100.297136909608,100.699827554454,100.557750798291,100.053287151136,99.5698570310247,100.39018404908,..,..
+Singapore,SGP,"School enrollment, secondary (% gross)",SE.SEC.ENRR,..,107.745868589242,107.472873863465,105.745250914262,104.621987875083,103.115839213946,102.951274385922,103.009804103267,103.082801906213,..,..
+Singapore,SGP,"School enrollment, secondary, female (% gross)",SE.SEC.ENRR.FE,..,107.364959262144,106.88839463636,105.214493204689,104.181057515607,102.619251241336,102.820483763331,102.73547410258,102.676070813741,..,..
+Singapore,SGP,"School enrollment, secondary, male (% gross)",SE.SEC.ENRR.MA,..,108.107125687417,108.030881396291,106.254353667032,105.043272523504,103.592337652794,103.07670015456,103.27297375811,103.473602350298,..,..
+Singapore,SGP,"School enrollment, tertiary (% gross)",SE.TER.ENRR,..,83.9409778236648,84.7929138455372,88.8864453410769,91.0889904414776,93.134767179468,97.0989103061521,98.02222650098,97.2886546863037,..,..
+Singapore,SGP,"School enrollment, tertiary, female (% gross)",SE.TER.ENRR.FE,..,90.5745224304781,91.1969710792811,95.417817614672,97.0900106709222,98.270054517134,102.329468912554,103.249422302202,102.127991350812,..,..
+Singapore,SGP,"School enrollment, tertiary, male (% gross)",SE.TER.ENRR.MA,..,77.8587744398723,78.9388531207259,82.9129967776584,85.5780775478494,88.3773156081459,92.1900666285229,93.1417006367603,92.7966960331169,..,..
+Singapore,SGP,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,2.99161870509909,2.94466258946576,2.87916382421742,2.85314011573792,2.72783994674683,2.69227004051208,2.82732009887695,2.47478008270264,2.1037700176239,2.19099857819757,..
+Thailand,THA,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,92.870002746582,91.9800033569336,..,93.7699966430664,91.2699966430664,..,..,91.0999984741211,..,..,..
+Thailand,THA,"School enrollment, primary (% gross)",SE.PRM.ENRR,103.333457946777,104.941299438477,101.863590810489,102.013545184574,103.012241063391,103.859900460568,103.619796585158,104.833004394528,102.574975655738,101.004223573604,100.728168483387
+Thailand,THA,"School enrollment, primary, female (% gross)",SE.PRM.ENRR.FE,100.97029876709,106.012710571289,97.5062060002166,101.054880104514,102.066604911573,102.946478890921,102.629857722714,103.826141593298,100.309523007892,100.034294056615,99.9599469853848
+Thailand,THA,"School enrollment, primary, male (% gross)",SE.PRM.ENRR.MA,105.535026550293,103.94580078125,106.017204283313,102.92746824133,103.914053775467,104.731486959918,104.565103930779,105.795286659855,104.741717681421,101.93168533762,101.462596580922
+Thailand,THA,"School enrollment, secondary (% gross)",SE.SEC.ENRR,124.330596923828,122.563217163086,79.5062371844027,80.6045305135668,81.7206425877734,82.3668560969625,84.6644528199547,88.0661686868399,93.3356315272258,92.507325535959,92.0872315506486
+Thailand,THA,"School enrollment, secondary, female (% gross)",SE.SEC.ENRR.FE,121.944808959961,122.222442626953,86.0704322494438,87.3145736498592,85.5828342157346,86.5028787913307,88.4176900305973,94.929673800743,96.6361035696829,94.0628144371624,95.1639658088824
+Thailand,THA,"School enrollment, secondary, male (% gross)",SE.SEC.ENRR.MA,126.597579956055,122.887626647949,73.1750375307641,74.1410133525236,78.0052710470125,78.3935637808293,81.0639358195783,81.4907422932092,90.1769888485506,91.0185505146134,89.1414973023905
+Thailand,THA,"School enrollment, tertiary (% gross)",SE.TER.ENRR,45.713134717198,49.3227291503798,47.427491541895,46.1667791174286,44.9880040072053,42.5900878816865,43.4690405127808,43.29484965617,45.4407811172674,44.9845744019321,49.0776442074561
+Thailand,THA,"School enrollment, tertiary, female (% gross)",SE.TER.ENRR.FE,53.7092451288539,57.4214006652236,55.0749782401459,53.9808588108715,52.1112881079867,49.2478167092024,49.9275516782207,49.6871101465991,52.2406320377059,51.5777288105997,56.4104050978021
+Thailand,THA,"School enrollment, tertiary, male (% gross)",SE.TER.ENRR.MA,37.8268590418986,41.3514140037504,39.9166488235337,38.5089070976094,38.0210252010671,36.0897893869241,37.1726929390098,37.0712790825077,38.8285696857321,38.5814272979733,41.9656224305874
+Thailand,THA,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,3.86397622727286,3.76761756770937,3.46532147640365,3.19769395901619,3.02221411183282,3.15314171737183,2.98212428478268,2.61187022798634,2.52122219628772,..,..
+Viet Nam,VNM,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,..,..,..,..,95.75,..,..,96.129997253418,..,..,..
+Viet Nam,VNM,"School enrollment, primary (% gross)",SE.PRM.ENRR,103.278372065069,105.947597481197,104.437659436385,104.190504718464,103.337272102979,102.847744602601,103.391282723881,104.129392785949,105.170807361038,106.332886485835,..
+Viet Nam,VNM,"School enrollment, primary, female (% gross)",SE.PRM.ENRR.FE,102.378273925626,105.638184866421,103.268548231168,102.28789247134,100.67166222154,100.299045610896,100.789646993236,101.74202938403,102.876683127032,104.136144338916,..
+Viet Nam,VNM,"School enrollment, primary, male (% gross)",SE.PRM.ENRR.MA,104.118975564681,106.234234290882,105.534074852116,105.999116996454,105.901651925785,105.296309137678,105.883577929896,106.413202784023,107.360767855338,108.424458564383,..
+Viet Nam,VNM,"School enrollment, secondary (% gross)",SE.SEC.ENRR,89.4548341262217,90.1583347107672,91.0725198149335,92.8377710790826,94.654621676317,93.1921389514105,92.7690209240401,93.4123434096522,..,..,..
+Viet Nam,VNM,"School enrollment, secondary, female (% gross)",SE.SEC.ENRR.FE,83.8337492903167,86.3064277183873,87.6304773371075,88.6447461101443,89.7093994425268,89.4501554566878,90.3080638471257,90.5445572317873,..,..,..
+Viet Nam,VNM,"School enrollment, secondary, male (% gross)",SE.SEC.ENRR.MA,94.8760643019166,93.8726930986627,94.4078377851191,96.929171698508,99.5151106974771,96.8611404229179,95.1768509933672,96.2090753212709,..,..,..
+Viet Nam,VNM,"School enrollment, tertiary (% gross)",SE.TER.ENRR,29.7250797402999,29.0811980839409,25.9526307046456,..,30.2241191864014,..,41.9554971195048,44.7536854027422,32.8415128147815,37.5923642016718,..
+Viet Nam,VNM,"School enrollment, tertiary, female (% gross)",SE.TER.ENRR.FE,29.4365366202641,31.9215031225633,27.4448664101479,..,..,..,41.0590994828712,45.3703223280821,36.0774676873689,40.8617680104156,..
+Viet Nam,VNM,"School enrollment, tertiary, male (% gross)",SE.TER.ENRR.MA,30.0066478469738,26.3157973289288,24.4948645754524,..,..,..,42.8379016583449,44.145253554546,29.6371360595075,34.348050984579,..
+Viet Nam,VNM,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,3.41660449674943,3.46906995773315,3.41865686539527,3.29537010192871,3.08499832693462,3.21652900152514,2.94517488804327,2.88738689372749,..,..,..
+Timor-Leste,TLS,"Literacy rate, adult total (% of people ages 15 and above)",SE.ADT.LITR.ZS,64.4499969482422,65.7799987792969,..,..,..,..,..,69.4000015258789,..,..,..
+Timor-Leste,TLS,"School enrollment, primary (% gross)",SE.PRM.ENRR,126.646454350675,123.315981015137,117.545590260011,113.613823069409,111.537505941321,110.606703667428,123.584941487948,119.036719326581,119.652693100113,..,..
+Timor-Leste,TLS,"School enrollment, primary, female (% gross)",SE.PRM.ENRR.FE,127.332451641345,123.303783970099,116.662871764846,112.376513833733,110.834815461264,109.882441832041,123.526744237491,119.331890222014,120.588958104051,..,..
+Timor-Leste,TLS,"School enrollment, primary, male (% gross)",SE.PRM.ENRR.MA,126.003887641128,123.327455868345,118.381960139716,114.792769878664,112.209763160398,111.301742338615,123.640971578869,118.751249276734,118.746314972847,..,..
+Timor-Leste,TLS,"School enrollment, secondary (% gross)",SE.SEC.ENRR,72.9840325557506,77.3856943732818,81.1665700933061,83.0952419040915,85.1248242560832,84.7410404382553,..,..,..,..,..
+Timor-Leste,TLS,"School enrollment, secondary, female (% gross)",SE.SEC.ENRR.FE,75.7349709712488,80.4793824903514,84.7672794199171,87.2436736474694,89.6775720031834,89.3942621030436,..,..,..,..,..
+Timor-Leste,TLS,"School enrollment, secondary, male (% gross)",SE.SEC.ENRR.MA,70.361714090423,74.4345766725873,77.7287306678523,79.1274138524616,80.7572865617746,80.2550255641568,..,..,..,..,..
+Timor-Leste,TLS,"School enrollment, tertiary (% gross)",SE.TER.ENRR,..,..,..,..,..,..,..,..,30.9611108169641,..,..
+Timor-Leste,TLS,"School enrollment, tertiary, female (% gross)",SE.TER.ENRR.FE,..,..,..,..,..,..,..,..,31.5507306442772,..,..
+Timor-Leste,TLS,"School enrollment, tertiary, male (% gross)",SE.TER.ENRR.MA,..,..,..,..,..,..,..,..,30.3830980746799,..,..
+Timor-Leste,TLS,"Government expenditure on education, total (% of GDP)",SE.XPD.TOTL.GD.ZS,8.46706962585449,8.12837982177734,7.17093992233276,6.848060131073,4.17968913742937,3.65287360437751,2.97389404101318,..,5.24052834781801,..,..
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+Data from database: World Development Indicators,,,,,,,,,,,,,,
+Last Updated: 07/13/2026,,,,,,,,,,,,,,
+Code,License Type,Indicator Name,Long definition,Source,Topic,Dataset,Unit of measure,Periodicity,Reference period,Aggregation method,Statistical concept and methodology,Development relevance,Limitations and exceptions,License URL
+SE.ADT.LITR.ZS,CC BY-4.0,"Literacy rate, adult total (% of people ages 15 and above)",Adult literacy rate is the percentage of people ages 15 and above who can both read and write with understanding a short simple statement about their everyday life.,"Data API, UN Educational, Scientific and Cultural Organization (UNESCO), uri: https://databrowser.uis.unesco.org/resources, note: The data are obtained through the UIS API.  Detailed documentation is available at: https://api.uis.unesco.org/api/public/documentation/, publisher: UNESCO Institute for Statistics (UIS), type: Excel (bulk file), date accessed: 2026-03-19, date published: 2026-02",Education: Outcomes,WB_WDI,% of people ages 15 and above,Annual,1970-2024,Weighted average,"Methodology: The indicator is calculated by the number of literate adults divided by the total number of adults, excluding adults with unknown literacy status.  
+
+
+
+
+
+Data on literacy are compiled by the UNESCO Institute for Statistics based on national censuses and household surveys and, for countries without recent literacy data, using the Global Age-Specific Literacy Projection Model (GALP). For detailed information, see www.uis.unesco.org.
+Statistical concept(s): Literacy statistics for most countries cover the population ages 15 and older, but some include younger ages or are confined to age ranges that tend to inflate literacy rates. The youth literacy rate for ages 15-24 reflects recent progress in education. It measures the accumulated outcomes of primary education over the previous 10 years or so by indicating the proportion of the population who have passed through the primary education system and acquired basic literacy and numeracy skills. Generally, literacy also encompasses numeracy, the ability to make simple arithmetic calculations.","Literacy rate is an outcome indicator to evaluate educational attainment. This data can predict the quality of future labor force and can be used in ensuring policies for life skills for men and women.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+It can be also used as a proxy instrument to see the effectiveness of education system; a high literacy rate suggests the capacity of an education system to provide a large population with opportunities to acquire literacy skills. The accumulated achievement of education is fundamental for further intellectual growth and social and economic development, although it doesn't necessarily ensure the quality of education.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Literate women implies that they can seek and use information for the betterment of the health, nutrition and education of their household members. Literate women are also empowered to play a meaningful role.","In practice, literacy is difficult to measure. Estimating literacy rates requires census or survey measurements under controlled conditions. Many countries report the number of literate people from self-reported data. Some use educational attainment data as a proxy but apply different lengths of school attendance or levels of completion. And there is a trend among recent national and international surveys toward using a direct reading test of literacy skills. Because definitions and methods of data collection differ across countries, data should be used cautiously.",https://datacatalog.worldbank.org/int/public-licenses#cc-by
+SE.PRM.ENRR,CC BY-4.0,"School enrollment, primary (% gross)","Gross enrollment ratio is the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.","Data API, UN Educational, Scientific and Cultural Organization (UNESCO), uri: https://databrowser.uis.unesco.org/resources, note: The data are obtained through the UIS API.  Detailed documentation is available at: https://api.uis.unesco.org/api/public/documentation/, publisher: UNESCO Institute for Statistics (UIS), type: Bulk file (csv), date accessed: 2026-03-19, date published: 2026-02",Education: Participation,WB_WDI,% of population in the 5-year age group immediately following preprimary education,Annual,1970-2025,Weighted average,"Methodology: Gross enrollment ratio for primary school is calculated by dividing the number of students enrolled in primary education regardless of age by the population of the age group which officially corresponds to primary education, and multiplying by 100. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data on education are collected by the UNESCO Institute for Statistics from official responses to its annual education survey. All the data are mapped to the International Standard Classification of Education (ISCED) to ensure the comparability of education programs at the international level. The current version was formally adopted by UNESCO Member States in 2011. Population data are drawn from the United Nations Population Division. Using a single source for population data standardizes definitions, estimations, and interpolation methods, ensuring a consistent methodology across countries and minimizing potential enumeration problems in national censuses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The reference years reflect the school year for which the data are presented. In some countries the school year spans two calendar years (for example, from September 2010 to June 2011); in these cases the reference year refers to the year in which the school year ended (2011 in the example).
+Statistical concept(s): Gross enrollment ratios indicate the capacity of each level of the education system, but a high ratio may reflect a substantial number of overage children enrolled in each grade because of repetition or late entry rather than a successful education system.","Primary education is fundamental to future educational success and opens pathways for continued advancement. This indicator measures the overall rate of participation in primary education, signifying the education system's ability to enroll students within a specific age cohort.","Enrollment indicators are based on annual school surveys, but do not necessarily reflect actual attendance or dropout rates during the year. Also, the length of education differs across countries and can influence enrollment rates, although the International Standard Classification of Education (ISCED) tries to minimize the difference. For example, a shorter duration for primary education tends to increase the rate; a longer one to decrease it (in part because older children are more at risk of dropping out). Moreover, age at enrollment may be inaccurately estimated or misstated, especially in communities where registration of births is not strictly enforced.",https://datacatalog.worldbank.org/int/public-licenses#cc-by
+SE.PRM.ENRR.FE,CC BY-4.0,"School enrollment, primary, female (% gross)","Gross enrollment ratio is the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.","Data API, UN Educational, Scientific and Cultural Organization (UNESCO), uri: https://databrowser.uis.unesco.org/resources, note: The data are obtained through the UIS API.  Detailed documentation is available at: https://api.uis.unesco.org/api/public/documentation/, publisher: UNESCO Institute for Statistics (UIS), type: Bulk file (csv), date accessed: 2026-03-19, date published: 2026-02",Education: Participation,WB_WDI,% of female population in the 5-year age group immediately following preprimary education,Annual,1970-2025,Weighted average,"Methodology: Gross enrollment ratio for primary school is calculated by dividing the number of students enrolled in primary education regardless of age by the population of the age group which officially corresponds to primary education, and multiplying by 100.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data on education are collected by the UNESCO Institute for Statistics from official responses to its annual education survey. All the data are mapped to the International Standard Classification of Education (ISCED) to ensure the comparability of education programs at the international level. The current version was formally adopted by UNESCO Member States in 2011. Population data are drawn from the United Nations Population Division. Using a single source for population data standardizes definitions, estimations, and interpolation methods, ensuring a consistent methodology across countries and minimizing potential enumeration problems in national censuses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The reference years reflect the school year for which the data are presented. In some countries the school year spans two calendar years (for example, from September 2010 to June 2011); in these cases the reference year refers to the year in which the school year ended (2011 in the example).
+Statistical concept(s): Gross enrollment ratios indicate the capacity of each level of the education system, but a high ratio may reflect a substantial number of overage children enrolled in each grade because of repetition or late entry rather than a successful education system.","Primary education is fundamental to future educational success and opens pathways for continued advancement. This indicator measures the overall rate of participation in primary education, signifying the education system's ability to enroll students within a specific age cohort.","Enrollment indicators are based on annual school surveys, but do not necessarily reflect actual attendance or dropout rates during the year. Also, the length of education differs across countries and can influence enrollment rates, although the International Standard Classification of Education (ISCED) tries to minimize the difference. For example, a shorter duration for primary education tends to increase the rate; a longer one to decrease it (in part because older children are more at risk of dropping out). Moreover, age at enrollment may be inaccurately estimated or misstated, especially in communities where registration of births is not strictly enforced.",https://datacatalog.worldbank.org/int/public-licenses#cc-by
+SE.PRM.ENRR.MA,CC BY-4.0,"School enrollment, primary, male (% gross)","Gross enrollment ratio is the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.","Data API, UN Educational, Scientific and Cultural Organization (UNESCO), uri: https://databrowser.uis.unesco.org/resources, note: The data are obtained through the UIS API.  Detailed documentation is available at: https://api.uis.unesco.org/api/public/documentation/, publisher: UNESCO Institute for Statistics (UIS), type: Bulk file (csv), date accessed: 2026-03-19, date published: 2026-02",Education: Participation,WB_WDI,% of male population in the 5-year age group immediately following preprimary education,Annual,1970-2025,Weighted average,"Methodology: Gross enrollment ratio for primary school is calculated by dividing the number of students enrolled in primary education regardless of age by the population of the age group which officially corresponds to primary education, and multiplying by 100. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data on education are collected by the UNESCO Institute for Statistics from official responses to its annual education survey. All the data are mapped to the International Standard Classification of Education (ISCED) to ensure the comparability of education programs at the international level. The current version was formally adopted by UNESCO Member States in 2011. Population data are drawn from the United Nations Population Division. Using a single source for population data standardizes definitions, estimations, and interpolation methods, ensuring a consistent methodology across countries and minimizing potential enumeration problems in national censuses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The reference years reflect the school year for which the data are presented. In some countries the school year spans two calendar years (for example, from September 2010 to June 2011); in these cases the reference year refers to the year in which the school year ended (2011 in the example).
+Statistical concept(s): Gross enrollment ratios indicate the capacity of each level of the education system, but a high ratio may reflect a substantial number of overage children enrolled in each grade because of repetition or late entry rather than a successful education system.","Primary education is fundamental to future educational success and opens pathways for continued advancement. This indicator measures the overall rate of participation in primary education, signifying the education system's ability to enroll students within a specific age cohort.","Enrollment indicators are based on annual school surveys, but do not necessarily reflect actual attendance or dropout rates during the year. Also, the length of education differs across countries and can influence enrollment rates, although the International Standard Classification of Education (ISCED) tries to minimize the difference. For example, a shorter duration for primary education tends to increase the rate; a longer one to decrease it (in part because older children are more at risk of dropping out). Moreover, age at enrollment may be inaccurately estimated or misstated, especially in communities where registration of births is not strictly enforced.",https://datacatalog.worldbank.org/int/public-licenses#cc-by
+SE.SEC.ENRR,CC BY-4.0,"School enrollment, secondary (% gross)","Gross enrollment ratio is the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown. Secondary education completes the provision of basic education that began at the primary level, and aims at laying the foundations for lifelong learning and human development, by offering more subject- or skill-oriented instruction using more specialized teachers.","Data API, UN Educational, Scientific and Cultural Organization (UNESCO), uri: https://databrowser.uis.unesco.org/resources, note: The data are obtained through the UIS API.  Detailed documentation is available at: https://api.uis.unesco.org/api/public/documentation/, publisher: UNESCO Institute for Statistics (UIS), type: Bulk file (csv), date accessed: 2026-03-19, date published: 2026-02",Education: Participation,WB_WDI,% of population in the 5-year age group immediately following primary education,Annual,1970-2025,Weighted average,"Methodology: Gross enrollment ratio for secondary school is calculated by dividing the number of students enrolled in secondary education regardless of age by the population of the age group which officially corresponds to secondary education, and multiplying by 100. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data on education are collected by the UNESCO Institute for Statistics from official responses to its annual education survey. All the data are mapped to the International Standard Classification of Education (ISCED) to ensure the comparability of education programs at the international level. The current version was formally adopted by UNESCO Member States in 2011. Population data are drawn from the United Nations Population Division. Using a single source for population data standardizes definitions, estimations, and interpolation methods, ensuring a consistent methodology across countries and minimizing potential enumeration problems in national censuses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The reference years reflect the school year for which the data are presented. In some countries the school year spans two calendar years (for example, from September 2010 to June 2011); in these cases the reference year refers to the year in which the school year ended (2011 in the example).
+Statistical concept(s): Gross enrollment ratios indicate the capacity of each level of the education system, but a high ratio may reflect a substantial number of overage children enrolled in each grade because of repetition or late entry rather than a successful education system.","Secondary education acts as a critical intermediary that not only builds upon the foundational knowledge acquired in primary education but also equips students for various pathways, including immediate entry into the workforce, further education in postsecondary non-tertiary institutions, or advancement to higher education. This indicator assesses the aggregate participation rate in secondary education, reflecting the education system's capacity to enroll students within a designated age group.","Enrollment indicators are based on annual school surveys, but do not necessarily reflect actual attendance or dropout rates during the year. Also, the length of education differs across countries and can influence enrollment rates, although the International Standard Classification of Education (ISCED) tries to minimize the difference. For example, a shorter duration for primary education tends to increase the rate; a longer one to decrease it (in part because older children are more at risk of dropping out). Moreover, age at enrollment may be inaccurately estimated or misstated, especially in communities where registration of births is not strictly enforced.",https://datacatalog.worldbank.org/int/public-licenses#cc-by
+SE.SEC.ENRR.FE,CC BY-4.0,"School enrollment, secondary, female (% gross)","Gross enrollment ratio is the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown. Secondary education completes the provision of basic education that began at the primary level, and aims at laying the foundations for lifelong learning and human development, by offering more subject- or skill-oriented instruction using more specialized teachers.","Data API, UN Educational, Scientific and Cultural Organization (UNESCO), uri: https://databrowser.uis.unesco.org/resources, note: The data are obtained through the UIS API.  Detailed documentation is available at: https://api.uis.unesco.org/api/public/documentation/, publisher: UNESCO Institute for Statistics (UIS), type: Bulk file (csv), date accessed: 2026-03-19, date published: 2026-02",Education: Participation,WB_WDI,% of female population in the 5-year age group immediately following primary education,Annual,1970-2025,Weighted average,"Methodology: Gross enrollment ratio for secondary school is calculated by dividing the number of students enrolled in secondary education regardless of age by the population of the age group which officially corresponds to secondary education, and multiplying by 100. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data on education are collected by the UNESCO Institute for Statistics from official responses to its annual education survey. All the data are mapped to the International Standard Classification of Education (ISCED) to ensure the comparability of education programs at the international level. The current version was formally adopted by UNESCO Member States in 2011. Population data are drawn from the United Nations Population Division. Using a single source for population data standardizes definitions, estimations, and interpolation methods, ensuring a consistent methodology across countries and minimizing potential enumeration problems in national censuses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The reference years reflect the school year for which the data are presented. In some countries the school year spans two calendar years (for example, from September 2010 to June 2011); in these cases the reference year refers to the year in which the school year ended (2011 in the example).
+Statistical concept(s): Gross enrollment ratios indicate the capacity of each level of the education system, but a high ratio may reflect a substantial number of overage children enrolled in each grade because of repetition or late entry rather than a successful education system.","Secondary education acts as a critical intermediary that not only builds upon the foundational knowledge acquired in primary education but also equips students for various pathways, including immediate entry into the workforce, further education in postsecondary non-tertiary institutions, or advancement to higher education. This indicator assesses the aggregate participation rate in secondary education, reflecting the education system's capacity to enroll students within a designated age group.","Enrollment indicators are based on annual school surveys, but do not necessarily reflect actual attendance or dropout rates during the year. Also, the length of education differs across countries and can influence enrollment rates, although the International Standard Classification of Education (ISCED) tries to minimize the difference. For example, a shorter duration for primary education tends to increase the rate; a longer one to decrease it (in part because older children are more at risk of dropping out). Moreover, age at enrollment may be inaccurately estimated or misstated, especially in communities where registration of births is not strictly enforced.",https://datacatalog.worldbank.org/int/public-licenses#cc-by
+SE.SEC.ENRR.MA,CC BY-4.0,"School enrollment, secondary, male (% gross)","Gross enrollment ratio is the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown. Secondary education completes the provision of basic education that began at the primary level, and aims at laying the foundations for lifelong learning and human development, by offering more subject- or skill-oriented instruction using more specialized teachers.","Data API, UN Educational, Scientific and Cultural Organization (UNESCO), uri: https://databrowser.uis.unesco.org/resources, note: The data are obtained through the UIS API.  Detailed documentation is available at: https://api.uis.unesco.org/api/public/documentation/, publisher: UNESCO Institute for Statistics (UIS), type: Bulk file (csv), date accessed: 2026-03-19, date published: 2026-02",Education: Participation,WB_WDI,% of male population in the 5-year age group immediately following primary education,Annual,1970-2025,Weighted average,"Methodology: Gross enrollment ratio for secondary school is calculated by dividing the number of students enrolled in secondary education regardless of age by the population of the age group which officially corresponds to secondary education, and multiplying by 100. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data on education are collected by the UNESCO Institute for Statistics from official responses to its annual education survey. All the data are mapped to the International Standard Classification of Education (ISCED) to ensure the comparability of education programs at the international level. The current version was formally adopted by UNESCO Member States in 2011. Population data are drawn from the United Nations Population Division. Using a single source for population data standardizes definitions, estimations, and interpolation methods, ensuring a consistent methodology across countries and minimizing potential enumeration problems in national censuses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The reference years reflect the school year for which the data are presented. In some countries the school year spans two calendar years (for example, from September 2010 to June 2011); in these cases the reference year refers to the year in which the school year ended (2011 in the example).
+Statistical concept(s): Gross enrollment ratios indicate the capacity of each level of the education system, but a high ratio may reflect a substantial number of overage children enrolled in each grade because of repetition or late entry rather than a successful education system.","Secondary education acts as a critical intermediary that not only builds upon the foundational knowledge acquired in primary education but also equips students for various pathways, including immediate entry into the workforce, further education in postsecondary non-tertiary institutions, or advancement to higher education. This indicator assesses the aggregate participation rate in secondary education, reflecting the education system's capacity to enroll students within a designated age group.","Enrollment indicators are based on annual school surveys, but do not necessarily reflect actual attendance or dropout rates during the year. Also, the length of education differs across countries and can influence enrollment rates, although the International Standard Classification of Education (ISCED) tries to minimize the difference. For example, a shorter duration for primary education tends to increase the rate; a longer one to decrease it (in part because older children are more at risk of dropping out). Moreover, age at enrollment may be inaccurately estimated or misstated, especially in communities where registration of births is not strictly enforced.",https://datacatalog.worldbank.org/int/public-licenses#cc-by
+SE.TER.ENRR,CC BY-4.0,"School enrollment, tertiary (% gross)","Gross enrollment ratio is the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown. Tertiary education, whether or not to an advanced research qualification, normally requires, as a minimum condition of admission, the successful completion of education at the secondary level.","Data API, UN Educational, Scientific and Cultural Organization (UNESCO), uri: https://databrowser.uis.unesco.org/resources, note: The data are obtained through the UIS API.  Detailed documentation is available at: https://api.uis.unesco.org/api/public/documentation/, publisher: UNESCO Institute for Statistics (UIS), type: Bulk file (csv), date accessed: 2026-03-19, date published: 2026-02",Education: Participation,WB_WDI,% of population in the 5-year age group immediately following upper secondary education,Annual,1970-2025,Weighted average,"Methodology: Gross enrollment ratio for tertiary school is calculated by dividing the number of students enrolled in tertiary education regardless of age by the population of the age group which officially corresponds to tertiary education, and multiplying by 100. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data on education are collected by the UNESCO Institute for Statistics from official responses to its annual education survey. All the data are mapped to the International Standard Classification of Education (ISCED) to ensure the comparability of education programs at the international level. The current version was formally adopted by UNESCO Member States in 2011. Population data are drawn from the United Nations Population Division. Using a single source for population data standardizes definitions, estimations, and interpolation methods, ensuring a consistent methodology across countries and minimizing potential enumeration problems in national censuses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The reference years reflect the school year for which the data are presented. In some countries the school year spans two calendar years (for example, from September 2010 to June 2011); in these cases the reference year refers to the year in which the school year ended (2011 in the example).
+Statistical concept(s): Gross enrollment ratios indicate the capacity of each level of the education system, but a high ratio may reflect a substantial number of overage children enrolled in each grade because of repetition or late entry rather than a successful education system.","Sustainable Development Goal (SDG) target 4.3 is committed to providing equitable access to affordable and high-quality technical, vocational, and tertiary education, including university, for both women and men. This particular indicator reflects the overall capacity of the educational infrastructure to support enrolment within a specified age demographic at the tertiary level.","Enrollment indicators are based on annual school surveys, but do not necessarily reflect actual attendance or dropout rates during the year. Also, the length of education differs across countries and can influence enrollment rates, although the International Standard Classification of Education (ISCED) tries to minimize the difference. For example, a shorter duration for primary education tends to increase the rate; a longer one to decrease it (in part because older children are more at risk of dropping out). Moreover, age at enrollment may be inaccurately estimated or misstated, especially in communities where registration of births is not strictly enforced.",https://datacatalog.worldbank.org/int/public-licenses#cc-by
+SE.TER.ENRR.FE,CC BY-4.0,"School enrollment, tertiary, female (% gross)","Gross enrollment ratio is the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown. Tertiary education, whether or not to an advanced research qualification, normally requires, as a minimum condition of admission, the successful completion of education at the secondary level.","Data API, UN Educational, Scientific and Cultural Organization (UNESCO), uri: https://databrowser.uis.unesco.org/resources, note: The data are obtained through the UIS API.  Detailed documentation is available at: https://api.uis.unesco.org/api/public/documentation/, publisher: UNESCO Institute for Statistics (UIS), type: Bulk file (csv), date accessed: 2026-03-19, date published: 2026-02",Education: Participation,WB_WDI,% of female population in the 5-year age group immediately following upper secondary education,Annual,1970-2025,Weighted average,"Methodology: Gross enrollment ratio for tertiary school is calculated by dividing the number of students enrolled in tertiary education regardless of age by the population of the age group which officially corresponds to tertiary education, and multiplying by 100. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data on education are collected by the UNESCO Institute for Statistics from official responses to its annual education survey. All the data are mapped to the International Standard Classification of Education (ISCED) to ensure the comparability of education programs at the international level. The current version was formally adopted by UNESCO Member States in 2011. Population data are drawn from the United Nations Population Division. Using a single source for population data standardizes definitions, estimations, and interpolation methods, ensuring a consistent methodology across countries and minimizing potential enumeration problems in national censuses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The reference years reflect the school year for which the data are presented. In some countries the school year spans two calendar years (for example, from September 2010 to June 2011); in these cases the reference year refers to the year in which the school year ended (2011 in the example).
+Statistical concept(s): Gross enrollment ratios indicate the capacity of each level of the education system, but a high ratio may reflect a substantial number of overage children enrolled in each grade because of repetition or late entry rather than a successful education system.","Sustainable Development Goal (SDG) target 4.3 is committed to providing equitable access to affordable and high-quality technical, vocational, and tertiary education, including university, for both women and men. This particular indicator reflects the overall capacity of the educational infrastructure to support enrolment within a specified age demographic at the tertiary level.","Enrollment indicators are based on annual school surveys, but do not necessarily reflect actual attendance or dropout rates during the year. Also, the length of education differs across countries and can influence enrollment rates, although the International Standard Classification of Education (ISCED) tries to minimize the difference. For example, a shorter duration for primary education tends to increase the rate; a longer one to decrease it (in part because older children are more at risk of dropping out). Moreover, age at enrollment may be inaccurately estimated or misstated, especially in communities where registration of births is not strictly enforced.",https://datacatalog.worldbank.org/int/public-licenses#cc-by
+SE.TER.ENRR.MA,CC BY-4.0,"School enrollment, tertiary, male (% gross)","Gross enrollment ratio is the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown. Tertiary education, whether or not to an advanced research qualification, normally requires, as a minimum condition of admission, the successful completion of education at the secondary level.","Data API, UN Educational, Scientific and Cultural Organization (UNESCO), uri: https://databrowser.uis.unesco.org/resources, note: The data are obtained through the UIS API.  Detailed documentation is available at: https://api.uis.unesco.org/api/public/documentation/, publisher: UNESCO Institute for Statistics (UIS), type: Bulk file (csv), date accessed: 2026-03-19, date published: 2026-02",Education: Participation,WB_WDI,% of male population in the 5-year age group immediately following upper secondary education,Annual,1970-2025,Weighted average,"Methodology: Gross enrollment ratio for tertiary school is calculated by dividing the number of students enrolled in tertiary education regardless of age by the population of the age group which officially corresponds to tertiary education, and multiplying by 100. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data on education are collected by the UNESCO Institute for Statistics from official responses to its annual education survey. All the data are mapped to the International Standard Classification of Education (ISCED) to ensure the comparability of education programs at the international level. The current version was formally adopted by UNESCO Member States in 2011. Population data are drawn from the United Nations Population Division. Using a single source for population data standardizes definitions, estimations, and interpolation methods, ensuring a consistent methodology across countries and minimizing potential enumeration problems in national censuses.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The reference years reflect the school year for which the data are presented. In some countries the school year spans two calendar years (for example, from September 2010 to June 2011); in these cases the reference year refers to the year in which the school year ended (2011 in the example).
+Statistical concept(s): Gross enrollment ratios indicate the capacity of each level of the education system, but a high ratio may reflect a substantial number of overage children enrolled in each grade because of repetition or late entry rather than a successful education system.","Sustainable Development Goal (SDG) target 4.3 is committed to providing equitable access to affordable and high-quality technical, vocational, and tertiary education, including university, for both women and men. This particular indicator reflects the overall capacity of the educational infrastructure to support enrolment within a specified age demographic at the tertiary level.","Enrollment indicators are based on annual school surveys, but do not necessarily reflect actual attendance or dropout rates during the year. Also, the length of education differs across countries and can influence enrollment rates, although the International Standard Classification of Education (ISCED) tries to minimize the difference. For example, a shorter duration for primary education tends to increase the rate; a longer one to decrease it (in part because older children are more at risk of dropping out). Moreover, age at enrollment may be inaccurately estimated or misstated, especially in communities where registration of births is not strictly enforced.",https://datacatalog.worldbank.org/int/public-licenses#cc-by
+SE.XPD.TOTL.GD.ZS,CC BY-4.0,"Government expenditure on education, total (% of GDP)","General government expenditure on education (current, capital, and transfers) is expressed as a percentage of GDP. It includes expenditure funded by transfers from international sources to government. General government usually refers to local, regional and central governments.","Data API, UN Educational, Scientific and Cultural Organization (UNESCO), uri: https://databrowser.uis.unesco.org/resources, note: The data are obtained through the UIS API.  Detailed documentation is available at: https://api.uis.unesco.org/api/public/documentation/, publisher: UNESCO Institute for Statistics (UIS), date accessed: 2026-03-19, date published: 2026-02",Education: Inputs,WB_WDI,% of GDP,Annual,1970-2025,Median,"Methodology: Government expenditure on education, total (% of GDP) is calculated by dividing total government expenditure for all levels of education by the GDP, and multiplying by 100. Aggregate data are based on World Bank estimates.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Information pertaining to educational expenditures is sourced from national governments, which provide the data in response to the annual survey conducted by the UNESCO Institute for Statistics (UIS) or through the joint UNESCO-OECD-Eurostat (UOE) data collection initiative. The responses to the questionnaire regarding educational spending are typically derived from the annual financial statements issued by either the Ministry of Finance or the Ministry of Education, or from the national accounts maintained by the National Statistical Office. Additionally, data concerning GDP and overall government expenditure are accessible via the IMF’s World Economic Outlook database, which is updated annually.
+Statistical concept(s): Generally, elevated levels of the indicator suggest that a government places a high priority on educational policy. Values ranging from 4% to 6% are indicative of a country achieving the benchmark set forth by the Education 2030 Framework for Action (https://unesdoc.unesco.org/ark:/48223/pf0000245656).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Educational expenditure encompasses spending on fundamental educational goods and services, including teaching personnel, school infrastructure, textbooks, and instructional materials, as well as on ancillary educational goods and services such as support services, general administration, and other related activities.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Funding for education may originate from public sources, encompassing all government ministries and agencies that finance or support educational programs within the country, as well as from international and private sources, such as household contributions.","Investment in education acts as a driving force for economic growth, enhances productivity, and promotes the betterment of individual and collective welfare. This indicator evaluates the extent to which a government prioritizes education in relation to its overall economic prosperity.",Data may refer to spending by the ministry of education only (excluding spending on educational activities by other ministries).,https://datacatalog.worldbank.org/int/public-licenses#cc-by

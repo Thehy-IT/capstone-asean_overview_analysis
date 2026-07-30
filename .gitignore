@@ -18,9 +18,9 @@
 # ------------------------------------------------------------------------------
 # 2. Data Files (Raw, Cleaned, External) - NEVER COMMIT SENSITIVE/LARGE DATA
 # ------------------------------------------------------------------------------
-/02_Data/**/*.csv
-/02_Data/**/*.xlsx
-/02_Data/**/*.xls
+# /02_Data/**/*.csv
+# /02_Data/**/*.xlsx
+# /02_Data/**/*.xls
 /02_Data/**/*.json
 /02_Data/**/*.parquet
 /02_Data/**/*.xml
