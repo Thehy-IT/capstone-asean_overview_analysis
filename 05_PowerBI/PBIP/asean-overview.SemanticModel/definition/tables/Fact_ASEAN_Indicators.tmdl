@@ -21,7 +21,7 @@ table Fact_ASEAN_Indicators
 		dataType: int64
 		formatString: 0
 		lineageTag: e8afd99d-9391-4c2d-9abf-1feb8792e2bd
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Year
 
 		annotation SummarizationSetBy = Automatic
@@ -35,6 +35,13 @@ table Fact_ASEAN_Indicators
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DateKey = DATE([Year], 1, 1)
+		dataType: dateTime
+		isHidden
+		formatString: dd/MM/yyyy
+		lineageTag: 0e123399-8ec4-4d00-840c-8e292870ce44
+		summarizeBy: none
 
 	partition Fact_ASEAN_Indicators = m
 		mode: import

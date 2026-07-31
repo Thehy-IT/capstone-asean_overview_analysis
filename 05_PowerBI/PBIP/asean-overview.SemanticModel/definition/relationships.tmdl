@@ -10,16 +10,16 @@ relationship caeb21c9-ca9a-07c1-c831-f624a412ce50
 	fromColumn: Fact_ASEAN_Tourism_Flow.DestinationCountryCode
 	toColumn: Dim_Country.CountryCode
 
-relationship 818aef52-f61b-473c-be5d-c0305aac49a5
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Dim_Date.Date
-	toColumn: LocalDateTable_2a5a8e18-2bfd-4108-85a5-726946390244.Date
+relationship Fact_ASEAN_Tourism_Flow_OriginCountryCode_Dim_Country_CountryCode
+	isActive: false
+	fromColumn: Fact_ASEAN_Tourism_Flow.OriginCountryCode
+	toColumn: Dim_Country.CountryCode
 
-relationship AutoDetected_7e78d39e-7259-411a-98c5-715b8fd94142
-	fromColumn: Fact_ASEAN_Indicators.Year
-	toColumn: Dim_Date.Year
+relationship Fact_ASEAN_Indicators_DateKey_Dim_Date_Date
+	fromColumn: Fact_ASEAN_Indicators.DateKey
+	toColumn: Dim_Date.Date
 
-relationship AutoDetected_eff3798a-45d9-4576-8b47-afbf18189292
-	fromColumn: Fact_ASEAN_Tourism_Flow.Year
-	toColumn: Dim_Date.Year
+relationship Fact_ASEAN_Tourism_Flow_DateKey_Dim_Date_Date
+	fromColumn: Fact_ASEAN_Tourism_Flow.DateKey
+	toColumn: Dim_Date.Date
 

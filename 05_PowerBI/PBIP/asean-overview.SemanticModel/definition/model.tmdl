@@ -6,7 +6,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["Dim_Country","Dim_Indicator","Fact_ASEAN_Indicators","Fact_ASEAN_Tourism_Flow","_Measures","Dim_Date"]
+annotation PBI_QueryOrder = ["Dim_Country","Dim_Indicator","Fact_ASEAN_Indicators","Fact_ASEAN_Tourism_Flow","_Measures"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -20,8 +20,6 @@ ref table Fact_ASEAN_Indicators
 ref table Fact_ASEAN_Tourism_Flow
 ref table _Measures
 ref table Dim_Date
-ref table DateTableTemplate_23d44e94-ced1-45a6-91e1-9842b0c2c7f6
-ref table LocalDateTable_2a5a8e18-2bfd-4108-85a5-726946390244
 
 ref cultureInfo en-US
 
