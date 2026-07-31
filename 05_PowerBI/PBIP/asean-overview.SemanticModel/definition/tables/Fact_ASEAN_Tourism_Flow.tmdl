@@ -21,7 +21,7 @@ table Fact_ASEAN_Tourism_Flow
 		dataType: int64
 		formatString: 0
 		lineageTag: 7a64fa93-73d3-4d9a-b318-c16191d6b936
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Year
 
 		annotation SummarizationSetBy = Automatic

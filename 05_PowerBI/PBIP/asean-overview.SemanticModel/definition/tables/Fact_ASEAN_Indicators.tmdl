@@ -21,7 +21,7 @@ table Fact_ASEAN_Indicators
 		dataType: int64
 		formatString: 0
 		lineageTag: e8afd99d-9391-4c2d-9abf-1feb8792e2bd
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Year
 
 		annotation SummarizationSetBy = Automatic

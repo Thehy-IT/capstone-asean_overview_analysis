@@ -7,6 +7,7 @@ table _Measures
 			
 			```
 		formatString: 0
+		displayFolder: 01 Core Aggregations
 		lineageTag: 0c9a1920-6940-403b-b02c-82d0afefbc30
 
 	measure 'Total Indicator Value' = ```
@@ -14,6 +15,7 @@ table _Measures
 			SUM(Fact_ASEAN_Indicators[Value])
 			
 			```
+		displayFolder: 01 Core Aggregations
 		lineageTag: c63a4255-2770-4b56-aaa6-10d8f50b3198
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -23,6 +25,7 @@ table _Measures
 			AVERAGE(Fact_ASEAN_Indicators[Value])
 			
 			```
+		displayFolder: 01 Core Aggregations
 		lineageTag: 64ed7130-b2e2-4f6b-9c3f-196882b5c0db
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -32,6 +35,7 @@ table _Measures
 			MIN(Fact_ASEAN_Indicators[Value])
 			
 			```
+		displayFolder: 01 Core Aggregations
 		lineageTag: 2ea51c65-59bf-4b2f-ac69-5346fe4d9e12
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -41,6 +45,7 @@ table _Measures
 			MAX(Fact_ASEAN_Indicators[Value])
 			
 			```
+		displayFolder: 01 Core Aggregations
 		lineageTag: becfa6b3-ae1a-4dda-9cfc-8acca766c4af
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -54,6 +59,7 @@ table _Measures
 			
 			
 			```
+		displayFolder: 02 Economic GDP
 		lineageTag: fd9c416f-3e27-4f5a-9ae1-a125388177f7
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -66,6 +72,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 02 Economic GDP
 		lineageTag: d60407be-cd8e-43d7-8a8d-5b7c284866cb
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -78,6 +85,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 02 Economic GDP
 		lineageTag: 3d18be9f-146f-4d12-b192-b036d0cd2649
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -90,6 +98,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 02 Economic GDP
 		lineageTag: b8cc35c5-9c71-45b2-b7e5-3a4c943e8dbf
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -102,6 +111,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 02 Economic GDP
 		lineageTag: a2aa9ce0-b341-480d-862c-9560d2731a4f
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -114,6 +124,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 02 Economic GDP
 		lineageTag: 0e025e21-0b0f-49ec-a576-d0e74c8fd538
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -126,6 +137,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 02 Economic GDP
 		lineageTag: ca041ef8-9768-4b3d-9244-cc64a161fa14
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -138,6 +150,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics
 		lineageTag: 6726e729-bcc2-4d5f-b977-c2b6e7ccb864
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -150,6 +163,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics
 		lineageTag: ec536670-a722-4471-a175-7452f4eed542
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -162,6 +176,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics\Gender Breakdown
 		lineageTag: 3a6fdd6c-c3b7-458f-8c20-63e7904158df
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -174,6 +189,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics\Gender Breakdown
 		lineageTag: d31c522c-9973-43ae-b2ea-e9dbe3625497
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -186,6 +202,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics\Gender Breakdown
 		lineageTag: 5c8fb537-3adc-4010-870b-2b8825dc5941
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -198,6 +215,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics\Gender Breakdown
 		lineageTag: 74c2cd56-6184-42d1-86cf-614e5f69e4d3
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -210,6 +228,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics
 		lineageTag: 2d871e16-55dd-4107-bff5-d9e6922b2f98
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -222,6 +241,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics
 		lineageTag: 016adb50-afa1-4faa-a5e5-ee9bc5379253
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -234,6 +254,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics\Age Structure
 		lineageTag: df3b20ad-7fa9-4b09-89b0-6158fb7b7829
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -246,6 +267,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics\Age Structure
 		lineageTag: f03d0868-1688-4453-a0f6-0baec95d0442
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -258,6 +280,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics\Age Structure
 		lineageTag: 7e2596a1-7dd8-4be4-88b9-c549b1fdd732
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -270,6 +293,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics\Age Structure
 		lineageTag: 0ed592ed-1d97-4321-8cf3-8d700a2267de
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -282,6 +306,7 @@ table _Measures
 			)
 			
 			```
+		displayFolder: 03 Demographics\Age Structure
 		lineageTag: d621fc48-6a89-403f-b619-b08cbd1ec9c1
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -295,7 +320,7 @@ table _Measures
 			
 			```
 		formatString: #,##0
-		displayFolder: 04 Trade
+		displayFolder: 04 Trade\Exports & Imports
 		lineageTag: fe210237-86cd-4edd-bf24-e51971d438e9
 
 	measure 'Imports of Goods & Services (US$)' = ```
@@ -307,7 +332,7 @@ table _Measures
 			
 			```
 		formatString: #,##0
-		displayFolder: 04 Trade
+		displayFolder: 04 Trade\Exports & Imports
 		lineageTag: 1f43fbdb-5e9e-435f-aa73-2fd8ed2b93e5
 
 	measure 'Merchandise Exports (US$)' = ```
@@ -319,7 +344,7 @@ table _Measures
 			
 			```
 		formatString: #,##0
-		displayFolder: 04 Trade
+		displayFolder: 04 Trade\Exports & Imports
 		lineageTag: 344c994e-ffa8-4b2a-a55e-441d692e6836
 
 	measure 'Merchandise Imports (US$)' = ```
@@ -331,7 +356,7 @@ table _Measures
 			
 			```
 		formatString: #,##0
-		displayFolder: 04 Trade
+		displayFolder: 04 Trade\Exports & Imports
 		lineageTag: 241ef411-a4c6-4d5c-bab2-e2c87d5dd241
 
 	measure 'Trade Balance (US$)' = ```
@@ -479,7 +504,7 @@ table _Measures
 			
 			```
 		formatString: 0.00"%"
-		displayFolder: 07 Education
+		displayFolder: 07 Education\Primary
 		lineageTag: 35319835-15b0-4401-bdb3-405c1ef744eb
 
 	measure 'Primary Enrollment Female (%)' = ```
@@ -491,7 +516,7 @@ table _Measures
 			
 			```
 		formatString: 0.00"%"
-		displayFolder: 07 Education
+		displayFolder: 07 Education\Primary
 		lineageTag: 85f96b91-999f-4842-a78f-5a080afbac29
 
 	measure 'Primary Enrollment Male (%)' = ```
@@ -503,7 +528,7 @@ table _Measures
 			
 			```
 		formatString: 0.00"%"
-		displayFolder: 07 Education
+		displayFolder: 07 Education\Primary
 		lineageTag: 054c8903-dad1-4afe-a749-4b844b74a3fe
 
 	measure 'Secondary Enrollment (% Gross)' = ```
@@ -515,7 +540,7 @@ table _Measures
 			
 			```
 		formatString: 0.00"%"
-		displayFolder: 07 Education
+		displayFolder: 07 Education\Secondary
 		lineageTag: fccce51b-a88e-4b5c-90f7-26e61fcae796
 
 	measure 'Secondary Enrollment Female (%)' = ```
@@ -527,7 +552,7 @@ table _Measures
 			
 			```
 		formatString: 0.00"%"
-		displayFolder: 07 Education
+		displayFolder: 07 Education\Secondary
 		lineageTag: 3456ca4c-0b0a-4966-8dd3-8f8cca2bfc44
 
 	measure 'Secondary Enrollment Male (%)' = ```
@@ -539,7 +564,7 @@ table _Measures
 			
 			```
 		formatString: 0.00"%"
-		displayFolder: 07 Education
+		displayFolder: 07 Education\Secondary
 		lineageTag: f357e22e-7b04-422b-aacf-2d05950f4dfc
 
 	measure 'Tertiary Enrollment (% Gross)' = ```
@@ -551,7 +576,7 @@ table _Measures
 			
 			```
 		formatString: 0.00"%"
-		displayFolder: 07 Education
+		displayFolder: 07 Education\Tertiary
 		lineageTag: cc6ae929-2594-42d4-9ff1-b7d7f4a5b0a3
 
 	measure 'Tertiary Enrollment Female (%)' = ```
@@ -563,7 +588,7 @@ table _Measures
 			
 			```
 		formatString: 0.00"%"
-		displayFolder: 07 Education
+		displayFolder: 07 Education\Tertiary
 		lineageTag: edb0c87c-32ab-4e92-9017-5f4bbe0e77fe
 
 	measure 'Tertiary Enrollment Male (%)' = ```
@@ -575,7 +600,7 @@ table _Measures
 			
 			```
 		formatString: 0.00"%"
-		displayFolder: 07 Education
+		displayFolder: 07 Education\Tertiary
 		lineageTag: 003fb54e-9898-4143-a1ec-fb7af5faa09e
 
 	measure 'Education Expenditure (% GDP)' = ```
@@ -635,7 +660,7 @@ table _Measures
 			
 			```
 		formatString: 0.00"%"
-		displayFolder: 08 Labor
+		displayFolder: 08 Labor\Employment by Sector
 		lineageTag: c6ee72cb-e3ce-4787-aa98-47a6db8d471f
 
 	measure 'Industry Employment (%)' = ```
@@ -647,7 +672,7 @@ table _Measures
 			
 			```
 		formatString: 0.00"%"
-		displayFolder: 08 Labor
+		displayFolder: 08 Labor\Employment by Sector
 		lineageTag: 77f3db42-702b-4afc-8852-74476cc77d2b
 
 	measure 'Services Employment (%)' = ```
@@ -659,7 +684,7 @@ table _Measures
 			
 			```
 		formatString: 0.00"%"
-		displayFolder: 08 Labor
+		displayFolder: 08 Labor\Employment by Sector
 		lineageTag: daf4fbac-699a-4bf3-ad5b-30c5a36e7dc4
 
 	measure 'Electricity Access (% Pop)' = ```
@@ -792,7 +817,7 @@ table _Measures
 			
 			```
 		formatString: 0.00
-		displayFolder: 11 Health
+		displayFolder: 11 Health\Mortality
 		lineageTag: 8aaf0444-f92f-43e0-bf2a-c2c4eb9bc921
 
 	measure 'Under-5 Female Mortality Rate' = ```
@@ -804,7 +829,7 @@ table _Measures
 			
 			```
 		formatString: 0.00
-		displayFolder: 11 Health
+		displayFolder: 11 Health\Mortality
 		lineageTag: af27859f-90e5-4ed1-91d1-39a280828759
 
 	measure 'Under-5 Male Mortality Rate' = ```
@@ -816,7 +841,7 @@ table _Measures
 			
 			```
 		formatString: 0.00
-		displayFolder: 11 Health
+		displayFolder: 11 Health\Mortality
 		lineageTag: 8673496e-65ff-4701-a458-a4acdacadf81
 
 	measure 'Maternal Mortality Ratio (Modeled)' = ```
@@ -828,7 +853,7 @@ table _Measures
 			
 			```
 		formatString: 0.00
-		displayFolder: 11 Health
+		displayFolder: 11 Health\Mortality
 		lineageTag: beb494b9-1730-4951-9cd7-74d6ecfb77bc
 
 	measure 'Maternal Mortality Ratio (National)' = ```
@@ -840,7 +865,7 @@ table _Measures
 			
 			```
 		formatString: 0.00
-		displayFolder: 11 Health
+		displayFolder: 11 Health\Mortality
 		lineageTag: 8521ada5-f727-4930-bcaf-721a6f0ab6e7
 
 	measure 'Hospital Beds (per 1k people)' = ```
@@ -920,7 +945,7 @@ table _Measures
 			
 			```
 		formatString: #,##0
-		displayFolder: 12 Time Intelligence
+		displayFolder: 02 Economic GDP\Time Intelligence
 		lineageTag: 22c6e2e4-75fd-4f7d-bc62-2eb832b9d26f
 
 	measure 'GDP YoY %' = ```
@@ -932,7 +957,7 @@ table _Measures
 			
 			```
 		formatString: 0.00%
-		displayFolder: 12 Time Intelligence
+		displayFolder: 02 Economic GDP\Time Intelligence
 		lineageTag: d04d84d5-bf47-4e23-b695-9e53982ce656
 
 	measure 'Internet Users YoY Change' = ```
@@ -944,7 +969,7 @@ table _Measures
 			
 			```
 		formatString: 0.00
-		displayFolder: 12 Time Intelligence
+		displayFolder: 06 Technology\Time Intelligence
 		lineageTag: 4fac4e2b-5a95-4f81-a386-d3046d2cf6be
 
 	measure 'GDP Rank ASEAN' = ```
@@ -963,7 +988,7 @@ table _Measures
 			
 			```
 		formatString: 0
-		displayFolder: 13 Ranking
+		displayFolder: 02 Economic GDP\Ranking & Benchmarking
 		lineageTag: 51034b78-d6a5-4456-9f03-4af00d3e6515
 
 	measure 'GDP Share of ASEAN (%)' = ```
@@ -975,7 +1000,7 @@ table _Measures
 			
 			```
 		formatString: 0.00%
-		displayFolder: 13 Ranking
+		displayFolder: 02 Economic GDP\Ranking & Benchmarking
 		lineageTag: 762e6a7a-79a6-442c-abc6-12abc55e5088
 
 	measure 'GDP Share Top 3 (%)' = ```
@@ -996,7 +1021,7 @@ table _Measures
 			
 			```
 		formatString: 0.00%
-		displayFolder: 13 Ranking
+		displayFolder: 02 Economic GDP\Ranking & Benchmarking
 		lineageTag: f1c9c4de-99d1-4a7a-827b-31548126349a
 
 	measure 'Country Delta vs ASEAN Avg' = ```

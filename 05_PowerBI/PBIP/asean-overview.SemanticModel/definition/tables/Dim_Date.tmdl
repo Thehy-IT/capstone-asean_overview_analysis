@@ -1,67 +1,66 @@
 table Dim_Date
-	lineageTag: 59da3284-2bbd-40d2-b5af-199108aad2fc
+	lineageTag: 41dd647c-0e02-4586-937b-a843d24465b1
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: f11d8359-4211-480b-80aa-95875222c950
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
 
 	column Date
-		formatString: General Date
-		lineageTag: 20cd73b9-089c-4913-b8c2-28cfd910b416
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 93fca91d-2873-4028-b8af-883a9726b148
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Date]
+		sourceColumn: Date
 
 		variation Variation
 			isDefault
-			relationship: cca6f5aa-2112-459e-ad61-3b1c781c56b9
-			defaultHierarchy: LocalDateTable_b44e70e0-289a-407c-a589-898c0492d39f.'Date Hierarchy'
+			relationship: 818aef52-f61b-473c-be5d-c0305aac49a5
+			defaultHierarchy: LocalDateTable_2a5a8e18-2bfd-4108-85a5-726946390244.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
-	column Year
-		formatString: 0
-		lineageTag: ba648946-bbd9-45f7-9f90-c39f1f609dd3
-		summarizeBy: sum
-		isNameInferred
-		sourceColumn: [Year]
-
-		annotation SummarizationSetBy = Automatic
+		annotation UnderlyingDateTimeDataType = Date
 
 	column YearLabel
-		lineageTag: c4683d09-0202-4c6a-aa8e-14ae71650e5a
+		dataType: string
+		lineageTag: 611274d7-cc69-40ed-801b-9d89ed5daac0
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [YearLabel]
+		sourceColumn: YearLabel
 
 		annotation SummarizationSetBy = Automatic
 
 	column Decade
-		lineageTag: 82b5d1c0-dd69-4b4f-840e-d2859de3c4ff
+		dataType: string
+		lineageTag: f1695482-bfda-4253-8aa1-4cdcd985b354
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Decade]
+		sourceColumn: Decade
 
 		annotation SummarizationSetBy = Automatic
 
 	column Period
-		lineageTag: f64aa3c6-b04d-4e99-9f5f-9b79cbfc4893
+		dataType: string
+		lineageTag: 0f548982-a7a2-4532-b1e3-d8944e7193fb
 		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Period]
+		sourceColumn: Period
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Dim_Date = calculated
+	partition Dim_Date = m
 		mode: import
 		source =
-				
-				VAR StartDate = DATE(2015, 1, 1)
-				VAR EndDate = DATE(2025, 12, 31)
-				RETURN
-				ADDCOLUMNS (
-				    CALENDAR(StartDate, EndDate),
-				    "Year", YEAR([Date]),
-				    "YearLabel", "Năm " & YEAR([Date]),
-				    "Decade", "Thập kỷ " & FLOOR(YEAR([Date]), 10) & "s",
-				    "Period", IF(YEAR([Date]) <= 2020, "2015-2020", "2021-2025")
-				)
+				let
+				    Source = Csv.Document(File.Contents("D:\kelangthanghocIT\UTH\capstone-asean_overview_analysis\02_Data\Cleaned\Dim_Date.csv"),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Year", Int64.Type}, {"Date", type date}, {"YearLabel", type text}, {"Decade", type text}, {"Period", type text}})
+				in
+				    #"Changed Type"
 
-	annotation PBI_Id = 5cfd75b442724da1a8bfa463bb2b99ed
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 
