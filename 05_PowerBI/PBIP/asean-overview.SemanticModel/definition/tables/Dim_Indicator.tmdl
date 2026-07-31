@@ -1,0 +1,50 @@
+table Dim_Indicator
+	lineageTag: 3d034c13-38ba-4dbe-9884-8e152464afb9
+
+	column SeriesCode
+		dataType: string
+		lineageTag: 571abdbf-7d48-4c33-9e7d-a167093d96d7
+		summarizeBy: none
+		sourceColumn: SeriesCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeriesName
+		dataType: string
+		lineageTag: 139548de-5b81-4307-9b8c-98f7589f5f35
+		summarizeBy: none
+		sourceColumn: SeriesName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Domain
+		dataType: string
+		lineageTag: 764da2c2-8fbb-4142-ac26-4a0ce928622b
+		summarizeBy: none
+		sourceColumn: Domain
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitOfMeasure
+		dataType: string
+		lineageTag: fcb9099b-e0d9-43cd-aee2-710b972ab76c
+		summarizeBy: none
+		sourceColumn: UnitOfMeasure
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Indicator = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\kelangthanghocIT\UTH\capstone-asean_overview_analysis\02_Data\Cleaned\Dim_Indicator.csv"),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"SeriesCode", type text}, {"SeriesName", type text}, {"Domain", type text}, {"UnitOfMeasure", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

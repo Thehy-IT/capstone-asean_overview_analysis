@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "asean-overview"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fed40c4f-9f21-42e3-b825-b09fee5d08fe"
+  }
+}

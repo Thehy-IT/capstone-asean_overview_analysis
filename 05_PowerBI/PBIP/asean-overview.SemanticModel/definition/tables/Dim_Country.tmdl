@@ -1,0 +1,77 @@
+table Dim_Country
+	lineageTag: 6512ad47-8a96-4b87-be2b-b5d0c30a55eb
+
+	column CountryCode
+		dataType: string
+		lineageTag: 255df5e9-e745-4fa9-9499-306a4c05499e
+		summarizeBy: none
+		sourceColumn: CountryCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryName
+		dataType: string
+		lineageTag: 70709842-5ae6-45b6-ba32-0b34b119315c
+		summarizeBy: none
+		sourceColumn: CountryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubRegion
+		dataType: string
+		lineageTag: 1628c0e3-8d99-4398-b366-48684039e2b7
+		summarizeBy: none
+		sourceColumn: SubRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Capital
+		dataType: string
+		lineageTag: 1f1f1e35-2dca-44c2-91df-ffa6b57ac5a9
+		summarizeBy: none
+		sourceColumn: Capital
+
+		annotation SummarizationSetBy = Automatic
+
+	column ISO2
+		dataType: string
+		lineageTag: 153b9597-b336-42bb-ba8f-eaa300594314
+		summarizeBy: none
+		sourceColumn: ISO2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: 073dc604-9176-45b4-b567-eb1f83dd4931
+		summarizeBy: sum
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		lineageTag: cb5993b9-acf7-40d9-9871-0948c456853a
+		summarizeBy: sum
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Dim_Country = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\kelangthanghocIT\UTH\capstone-asean_overview_analysis\02_Data\Cleaned\Dim_Country.csv"),[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"CountryCode", type text}, {"CountryName", type text}, {"SubRegion", type text}, {"Capital", type text}, {"ISO2", type text}, {"Latitude", type number}, {"Longitude", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

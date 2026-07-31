@@ -1,0 +1,99 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 2,
+            "y": 460.85861525651774
+          },
+          "nodeIndex": "Dim_Country",
+          "nodeLineageTag": "6512ad47-8a96-4b87-be2b-b5d0c30a55eb",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 81.209427368186084,
+            "y": 0
+          },
+          "nodeIndex": "Dim_Indicator",
+          "nodeLineageTag": "3d034c13-38ba-4dbe-9884-8e152464afb9",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 272.14356378559961,
+            "y": 270.4320670601744
+          },
+          "nodeIndex": "Fact_ASEAN_Indicators",
+          "nodeLineageTag": "d5338223-a8c5-4304-afb5-e67c1d956167",
+          "size": {
+            "height": 187,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 532.80003280620167,
+            "y": 437.88991668716272
+          },
+          "nodeIndex": "Fact_ASEAN_Tourism_Flow",
+          "nodeLineageTag": "f3843a81-6310-47f8-a2b0-4d7efa377134",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 992.68264997174788,
+            "y": 0
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "d2d3386e-a58a-452d-86c9-21e36766c819",
+          "size": {
+            "height": 171.647991067467,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 632.02673483081151,
+            "y": 93.0159877177671
+          },
+          "nodeIndex": "Dim_Date",
+          "size": {
+            "height": 245.09866071164464,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 70.9555439009688,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

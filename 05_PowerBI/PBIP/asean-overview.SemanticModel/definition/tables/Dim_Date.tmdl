@@ -1,0 +1,67 @@
+table Dim_Date
+	lineageTag: 59da3284-2bbd-40d2-b5af-199108aad2fc
+
+	column Date
+		formatString: General Date
+		lineageTag: 20cd73b9-089c-4913-b8c2-28cfd910b416
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: cca6f5aa-2112-459e-ad61-3b1c781c56b9
+			defaultHierarchy: LocalDateTable_b44e70e0-289a-407c-a589-898c0492d39f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: ba648946-bbd9-45f7-9f90-c39f1f609dd3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearLabel
+		lineageTag: c4683d09-0202-4c6a-aa8e-14ae71650e5a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearLabel]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Decade
+		lineageTag: 82b5d1c0-dd69-4b4f-840e-d2859de3c4ff
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Decade]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		lineageTag: f64aa3c6-b04d-4e99-9f5f-9b79cbfc4893
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Period]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Date = calculated
+		mode: import
+		source =
+				
+				VAR StartDate = DATE(2015, 1, 1)
+				VAR EndDate = DATE(2025, 12, 31)
+				RETURN
+				ADDCOLUMNS (
+				    CALENDAR(StartDate, EndDate),
+				    "Year", YEAR([Date]),
+				    "YearLabel", "Năm " & YEAR([Date]),
+				    "Decade", "Thập kỷ " & FLOOR(YEAR([Date]), 10) & "s",
+				    "Period", IF(YEAR([Date]) <= 2020, "2015-2020", "2021-2025")
+				)
+
+	annotation PBI_Id = 5cfd75b442724da1a8bfa463bb2b99ed
+

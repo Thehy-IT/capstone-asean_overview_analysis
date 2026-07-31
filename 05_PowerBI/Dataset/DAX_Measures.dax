@@ -1,101 +1,581 @@
 // =========================================================================
-// POWER BI DAX MEASURE LIBRARY (REFACTORED & VERIFIED)
-// Project: capstone-asean_overview_analysis
+// POWER BI DAX MEASURE LIBRARY (ENTERPRISE PRODUCTION-GRADE)
+// Project: ASEAN Socio-Economic & Development Analysis (2015 - 2025)
 // Author: 20-Year Senior BI Solution Architect
+// Description: Comprehensive DAX Measure definitions covering 10 Socio-Economic 
+//              Domains, Time Intelligence, Dynamic KPI Headers, Benchmarking,
+//              and Power BI Star Schema Optimization.
 // =========================================================================
 
-// -------------------------------------------------------------------------
-// SECTION 1: CORE AGGREGATION & BASE MEASURES
-// -------------------------------------------------------------------------
 
-// Total Record Count
+// =========================================================================
+// SECTION 1: CORE AGGREGATIONS & GENERIC BASE MEASURES
+// =========================================================================
+
+// Total Record Count in Fact Table
 [Total Records] = 
 COUNTROWS(Fact_ASEAN_Indicators)
 
-// Total Value (Generic Sum)
+// Total Value (Generic Aggregate Sum)
 [Total Indicator Value] = 
 SUM(Fact_ASEAN_Indicators[Value])
 
-// Average Value (Generic Average)
+// Average Value (Generic Aggregate Average)
 [Avg Indicator Value] = 
 AVERAGE(Fact_ASEAN_Indicators[Value])
 
+// Minimum Indicator Value
+[Min Indicator Value] = 
+MIN(Fact_ASEAN_Indicators[Value])
 
-// -------------------------------------------------------------------------
-// SECTION 2: ECONOMIC DOMAIN MEASURES (GDP, Inflation, Capital)
-// -------------------------------------------------------------------------
+// Maximum Indicator Value
+[Max Indicator Value] = 
+MAX(Fact_ASEAN_Indicators[Value])
 
-// GDP Current USD
+
+// =========================================================================
+// SECTION 2: ECONOMIC & GDP DOMAIN MEASURES (7 INDICATORS)
+// =========================================================================
+
+// 1. GDP (Current US$)
 [GDP (Current US$)] = 
 CALCULATE(
     SUM(Fact_ASEAN_Indicators[Value]),
     Dim_Indicator[SeriesCode] = "NY.GDP.MKTP.CD"
 )
 
-// GDP Growth Rate (%)
+// 2. GDP Growth Rate (%)
 [GDP Growth Rate (%)] = 
 CALCULATE(
     AVERAGE(Fact_ASEAN_Indicators[Value]),
     Dim_Indicator[SeriesCode] = "NY.GDP.MKTP.KD.ZG"
 )
 
-// GDP Per Capita (USD)
+// 3. GDP Per Capita (Current US$)
 [GDP Per Capita (US$)] = 
 CALCULATE(
     AVERAGE(Fact_ASEAN_Indicators[Value]),
     Dim_Indicator[SeriesCode] = "NY.GDP.PCAP.CD"
 )
 
-// Inflation Rate (%)
+// 4. Inflation Rate (% Consumer Prices)
 [Inflation Rate (%)] = 
 CALCULATE(
     AVERAGE(Fact_ASEAN_Indicators[Value]),
     Dim_Indicator[SeriesCode] = "FP.CPI.TOTL.ZG"
 )
 
+// 5. Central Government Debt (% of GDP)
+[Government Debt (% GDP)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "GC.DOD.TOTL.GD.ZS"
+)
 
-// -------------------------------------------------------------------------
-// SECTION 3: DEMOGRAPHICS, SOCIAL & TOURISM MEASURES
-// -------------------------------------------------------------------------
+// 6. Gross Capital Formation (% of GDP)
+[Gross Capital Formation (% GDP)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "NE.GDI.TOTL.ZS"
+)
 
-// Total Population
+// 7. Gross Savings (% of GDP)
+[Gross Savings (% GDP)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "NY.GNS.ICTR.ZS"
+)
+
+
+// =========================================================================
+// SECTION 3: DEMOGRAPHICS & POPULATION DOMAIN MEASURES (13 INDICATORS)
+// =========================================================================
+
+// 1. Total Population
 [Total Population] = 
 CALCULATE(
     SUM(Fact_ASEAN_Indicators[Value]),
     Dim_Indicator[SeriesCode] = "SP.POP.TOTL"
 )
 
-// Internet Usage (% Population)
+// 2. Population Growth Rate (%)
+[Population Growth Rate (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.POP.GROW"
+)
+
+// 3. Female Population (Absolute)
+[Female Population] = 
+CALCULATE(
+    SUM(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.POP.TOTL.FE.IN"
+)
+
+// 4. Female Population (% of Total)
+[Female Population (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.POP.TOTL.FE.ZS"
+)
+
+// 5. Male Population (Absolute)
+[Male Population] = 
+CALCULATE(
+    SUM(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.POP.TOTL.MA.IN"
+)
+
+// 6. Male Population (% of Total)
+[Male Population (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.POP.TOTL.MA.ZS"
+)
+
+// 7. Urban Population (% of Total Population)
+[Urban Population (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.URB.TOTL.IN.ZS"
+)
+
+// 8. Fertility Rate (Births per woman)
+[Fertility Rate] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.DYN.TFRT.IN"
+)
+
+// 9. Population Ages 0-14 (% of Total)
+[Population Ages 0-14 (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.POP.0014.TO.ZS"
+)
+
+// 10. Population Ages 65+ (% of Total)
+[Population Ages 65+ (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.POP.65UP.TO.ZS"
+)
+
+// 11. Age Dependency Ratio (% of Working-Age Population)
+[Age Dependency Ratio (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.POP.DPND"
+)
+
+// 12. Old Age Dependency Ratio (% of Working-Age Population)
+[Old Age Dependency Ratio (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.POP.DPND.OL"
+)
+
+// 13. Young Age Dependency Ratio (% of Working-Age Population)
+[Young Age Dependency Ratio (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.POP.DPND.YG"
+)
+
+
+// =========================================================================
+// SECTION 4: TRADE & INTERNATIONAL COMMERCE DOMAIN MEASURES (6 INDICATORS)
+// =========================================================================
+
+// 1. Exports of Goods and Services (Current US$)
+[Exports of Goods & Services (US$)] = 
+CALCULATE(
+    SUM(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "NE.EXP.GNFS.CD"
+)
+
+// 2. Imports of Goods and Services (Current US$)
+[Imports of Goods & Services (US$)] = 
+CALCULATE(
+    SUM(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "NE.IMP.GNFS.CD"
+)
+
+// 3. Merchandise Exports (Current US$)
+[Merchandise Exports (US$)] = 
+CALCULATE(
+    SUM(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "TX.VAL.MRCH.CD.WT"
+)
+
+// 4. Merchandise Imports (Current US$)
+[Merchandise Imports (US$)] = 
+CALCULATE(
+    SUM(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "TM.VAL.MRCH.CD.WT"
+)
+
+// Trade Balance (Exports - Imports)
+[Trade Balance (US$)] = 
+VAR _Exports = [Exports of Goods & Services (US$)]
+VAR _Imports = [Imports of Goods & Services (US$)]
+RETURN
+IF(
+    NOT ISBLANK(_Exports) || NOT ISBLANK(_Imports),
+    _Exports - _Imports,
+    BLANK()
+)
+
+// 5. Merchandise Trade (% of GDP)
+[Merchandise Trade (% GDP)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "TG.VAL.TOTL.GD.ZS"
+)
+
+// 6. Trade Openness Rate (% of GDP)
+[Trade Openness (% GDP)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "NE.TRD.GNFS.ZS"
+)
+
+
+// =========================================================================
+// SECTION 5: FOREIGN DIRECT INVESTMENT (FDI) DOMAIN MEASURES (3 INDICATORS)
+// =========================================================================
+
+// 1. FDI Net Inflows (BoP, Current US$)
+[FDI Net Inflows (US$)] = 
+CALCULATE(
+    SUM(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "BX.KLT.DINV.CD.WD"
+)
+
+// 2. FDI Net Outflows (BoP, Current US$)
+[FDI Net Outflows (US$)] = 
+CALCULATE(
+    SUM(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "BM.KLT.DINV.CD.WD"
+)
+
+// 3. FDI Net Inflows (% of GDP)
+[FDI Net Inflows (% GDP)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "BX.KLT.DINV.WD.GD.ZS"
+)
+
+
+// =========================================================================
+// SECTION 6: TECHNOLOGY & DIGITAL INFRASTRUCTURE DOMAIN (4 INDICATORS)
+// =========================================================================
+
+// 1. Internet Users (% of Population)
 [Internet Users (% Pop)] = 
 CALCULATE(
     AVERAGE(Fact_ASEAN_Indicators[Value]),
     Dim_Indicator[SeriesCode] = "IT.NET.USER.ZS"
 )
 
-// Total Tourism Visitor Arrivals (Aggregated Fact)
+// 2. Mobile Cellular Subscriptions (per 100 people)
+[Mobile Subscriptions (per 100)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "IT.CEL.SETS.P2"
+)
+
+// 3. Fixed Broadband Subscriptions (per 100 people)
+[Fixed Broadband (per 100)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "IT.NET.BBND.P2"
+)
+
+// 4. Secure Internet Servers (per 1 million people)
+[Secure Internet Servers (per 1M)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "IT.NET.SECR.P6"
+)
+
+
+// =========================================================================
+// SECTION 7: EDUCATION & HUMAN CAPITAL DOMAIN MEASURES (11 INDICATORS)
+// =========================================================================
+
+// 1. Adult Literacy Rate (% of people ages 15+)
+[Adult Literacy Rate (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SE.ADT.LITR.ZS"
+)
+
+// 2. Primary School Enrollment (% Gross)
+[Primary Enrollment (% Gross)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SE.PRM.ENRR"
+)
+
+// 3. Primary School Enrollment - Female (% Gross)
+[Primary Enrollment Female (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SE.PRM.ENRR.FE"
+)
+
+// 4. Primary School Enrollment - Male (% Gross)
+[Primary Enrollment Male (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SE.PRM.ENRR.MA"
+)
+
+// 5. Secondary School Enrollment (% Gross)
+[Secondary Enrollment (% Gross)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SE.SEC.ENRR"
+)
+
+// 6. Secondary School Enrollment - Female (% Gross)
+[Secondary Enrollment Female (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SE.SEC.ENRR.FE"
+)
+
+// 7. Secondary School Enrollment - Male (% Gross)
+[Secondary Enrollment Male (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SE.SEC.ENRR.MA"
+)
+
+// 8. Tertiary School Enrollment (% Gross)
+[Tertiary Enrollment (% Gross)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SE.TER.ENRR"
+)
+
+// 9. Tertiary School Enrollment - Female (% Gross)
+[Tertiary Enrollment Female (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SE.TER.ENRR.FE"
+)
+
+// 10. Tertiary School Enrollment - Male (% Gross)
+[Tertiary Enrollment Male (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SE.TER.ENRR.MA"
+)
+
+// 11. Government Expenditure on Education (% of GDP)
+[Education Expenditure (% GDP)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SE.XPD.TOTL.GD.ZS"
+)
+
+
+// =========================================================================
+// SECTION 8: LABOR & EMPLOYMENT DOMAIN MEASURES (6 INDICATORS)
+// =========================================================================
+
+// 1. Labor Force Participation Rate (% of population 15+)
+[Labor Force Participation Rate (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SL.TLF.CACT.ZS"
+)
+
+// 2. Total Unemployment Rate (% of labor force)
+[Unemployment Rate (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SL.UEM.TOTL.ZS"
+)
+
+// 3. Youth Unemployment Rate (% of labor force 15-24)
+[Youth Unemployment Rate (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SL.UEM.1524.ZS"
+)
+
+// 4. Employment in Agriculture (% of total employment)
+[Agriculture Employment (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SL.AGR.EMPL.ZS"
+)
+
+// 5. Employment in Industry (% of total employment)
+[Industry Employment (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SL.IND.EMPL.ZS"
+)
+
+// 6. Employment in Services (% of total employment)
+[Services Employment (%)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SL.SRV.EMPL.ZS"
+)
+
+
+// =========================================================================
+// SECTION 9: ENVIRONMENT & ENERGY DOMAIN MEASURES (5 INDICATORS)
+// =========================================================================
+
+// 1. Access to Electricity (% of population)
+[Electricity Access (% Pop)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "EG.ELC.ACCS.ZS"
+)
+
+// 2. Renewable Energy Consumption (% of total final energy)
+[Renewable Energy (% Final Energy)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "EG.FEC.RNEW.ZS"
+)
+
+// 3. Energy Use Per Capita (kg oil equivalent)
+[Energy Use Per Capita (kg oil eq)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "EG.USE.PCAP.KG.OE"
+)
+
+// 4. Forest Area (% of land area)
+[Forest Area (% Land Area)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "AG.LND.FRST.ZS"
+)
+
+// 5. Carbon Dioxide Damage (% of GNI)
+[CO2 Damage (% GNI)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "NY.ADJ.DCO2.GN.ZS"
+)
+
+
+// =========================================================================
+// SECTION 10: TOURISM & SERVICES DOMAIN MEASURES (1 INDICATOR + FACT FLOW)
+// =========================================================================
+
+// 1. Tourism Visitor Arrivals (Aggregated Fact Indicators)
 [Tourism Visitors Total] = 
 CALCULATE(
     SUM(Fact_ASEAN_Indicators[Value]),
     Dim_Indicator[SeriesCode] = "ST.INT.ARVL.TOTL"
 )
 
-// Tourism Visitors Flow (Matrix Flow Fact Table)
+// 2. Tourism Visitors Flow (Matrix Flow Fact Table)
 [Tourism Visitors Flow] = 
 SUM(Fact_ASEAN_Tourism_Flow[Visitors])
 
+// Top Tourism Corridor Flow Visitors
+[Top Corridor Visitors] = 
+MAXX(
+    SUMMARIZE(
+        Fact_ASEAN_Tourism_Flow,
+        Fact_ASEAN_Tourism_Flow[DestinationCountryCode],
+        Fact_ASEAN_Tourism_Flow[OriginCountryCode]
+    ),
+    [Tourism Visitors Flow]
+)
 
-// -------------------------------------------------------------------------
-// SECTION 4: TIME INTELLIGENCE & YOY COMPARISONS (Dim_Date[Date] Supported)
-// -------------------------------------------------------------------------
 
-// Prior Year Value
+// =========================================================================
+// SECTION 11: HEALTH & WELLBEING DOMAIN MEASURES (9 INDICATORS)
+// =========================================================================
+
+// 1. Life Expectancy at Birth (Years)
+[Life Expectancy at Birth (Years)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SP.DYN.LE00.IN"
+)
+
+// 2. Current Health Expenditure (% of GDP)
+[Health Expenditure (% GDP)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SH.XPD.CHEX.GD.ZS"
+)
+
+// 3. Under-5 Mortality Rate (per 1,000 live births)
+[Under-5 Mortality Rate (per 1k)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SH.DYN.MORT"
+)
+
+// 4. Under-5 Female Mortality Rate (per 1,000 live births)
+[Under-5 Female Mortality Rate] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SH.DYN.MORT.FE"
+)
+
+// 5. Under-5 Male Mortality Rate (per 1,000 live births)
+[Under-5 Male Mortality Rate] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SH.DYN.MORT.MA"
+)
+
+// 6. Maternal Mortality Ratio (Modeled estimate per 100,000 live births)
+[Maternal Mortality Ratio (Modeled)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SH.STA.MMRT"
+)
+
+// 7. Maternal Mortality Ratio (National estimate per 100,000 live births)
+[Maternal Mortality Ratio (National)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SH.STA.MMRT.NE"
+)
+
+// 8. Hospital Beds (per 1,000 people)
+[Hospital Beds (per 1k people)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SH.MED.BEDS.ZS"
+)
+
+// 9. Physicians Density (per 1,000 people)
+[Physicians (per 1k people)] = 
+CALCULATE(
+    AVERAGE(Fact_ASEAN_Indicators[Value]),
+    Dim_Indicator[SeriesCode] = "SH.MED.PHYS.ZS"
+)
+
+
+// =========================================================================
+// SECTION 12: TIME INTELLIGENCE & YOY COMPARATIVE MEASURES
+// =========================================================================
+
+// Generic Prior Year Value
 [Indicator Value PY] = 
 CALCULATE(
     [Total Indicator Value],
     SAMEPERIODLASTYEAR(Dim_Date[Date])
 )
 
-// Year-over-Year (YoY) Change
+// Generic Year-over-Year (YoY) Difference Change
 [Indicator Value YoY Change] = 
 VAR _Current = [Total Indicator Value]
 VAR _Previous = [Indicator Value PY]
@@ -106,7 +586,7 @@ IF(
     BLANK()
 )
 
-// Year-over-Year (YoY) Growth %
+// Generic Year-over-Year (YoY) Percentage Growth
 [Indicator Value YoY %] = 
 VAR _Current = [Total Indicator Value]
 VAR _Previous = [Indicator Value PY]
@@ -117,19 +597,33 @@ DIVIDE(
     0
 )
 
-// GDP YoY Growth Rate %
+// GDP Prior Year
+[GDP PY] = 
+CALCULATE(
+    [GDP (Current US$)],
+    SAMEPERIODLASTYEAR(Dim_Date[Date])
+)
+
+// GDP YoY Growth Percentage
 [GDP YoY %] = 
 VAR _CurrentGDP = [GDP (Current US$)]
-VAR _PreviousGDP = CALCULATE([GDP (Current US$)], SAMEPERIODLASTYEAR(Dim_Date[Date]))
+VAR _PreviousGDP = [GDP PY]
 RETURN
 DIVIDE(_CurrentGDP - _PreviousGDP, _PreviousGDP, 0)
 
+// Internet Users YoY Change (% Points)
+[Internet Users YoY Change] = 
+VAR _Current = [Internet Users (% Pop)]
+VAR _Previous = CALCULATE([Internet Users (% Pop)], SAMEPERIODLASTYEAR(Dim_Date[Date]))
+RETURN
+IF(NOT ISBLANK(_Current) && NOT ISBLANK(_Previous), _Current - _Previous, BLANK())
 
-// -------------------------------------------------------------------------
-// SECTION 5: RANKING & BENCHMARKING (DYNAMIC RANKING ACROSS ASEAN)
-// -------------------------------------------------------------------------
 
-// GDP Rank within ASEAN
+// =========================================================================
+// SECTION 13: RANKING & BENCHMARKING (DYNAMIC BENCHMARKS ACROSS ASEAN)
+// =========================================================================
+
+// Country GDP Rank within ASEAN
 [GDP Rank ASEAN] = 
 IF(
     ISINSCOPE(Dim_Country[CountryName]),
@@ -143,21 +637,64 @@ IF(
     BLANK()
 )
 
-// ASEAN GDP Share (%)
+// Country GDP Share of Total ASEAN (%)
 [GDP Share of ASEAN (%)] = 
 VAR _CountryGDP = [GDP (Current US$)]
 VAR _TotalASEANGDP = CALCULATE([GDP (Current US$)], ALL(Dim_Country))
 RETURN
 DIVIDE(_CountryGDP, _TotalASEANGDP, 0)
 
+// Top 3 ASEAN GDP Share Combined (%)
+[GDP Share Top 3 (%)] = 
+VAR _Top3GDP = 
+    SUMX(
+        TOPN(
+            3,
+            ALLSELECTED(Dim_Country),
+            [GDP (Current US$)],
+            DESC
+        ),
+        [GDP (Current US$)]
+    )
+VAR _TotalASEANGDP = CALCULATE([GDP (Current US$)], ALL(Dim_Country))
+RETURN
+DIVIDE(_Top3GDP, _TotalASEANGDP, 0)
 
-// -------------------------------------------------------------------------
-// SECTION 6: DYNAMIC KPI HEADER & TITLE MEASURE
-// -------------------------------------------------------------------------
+// Country Indicator Value Delta vs ASEAN Average
+[Country Delta vs ASEAN Avg] = 
+VAR _CountryVal = [Avg Indicator Value]
+VAR _ASEANAvg = CALCULATE([Avg Indicator Value], ALL(Dim_Country))
+RETURN
+_CountryVal - _ASEANAvg
+
+
+// =========================================================================
+// SECTION 14: DYNAMIC KPI HEADERS & UI HELPER MEASURES
+// =========================================================================
 
 // Dynamic Title for Dashboard Visuals
 [Dynamic Dashboard Title] = 
-VAR _SelectedDomain = SELECTEDVALUE(Dim_Indicator[Domain], "Tất cả các mảng phát triển")
+VAR _SelectedDomain = SELECTEDVALUE(Dim_Indicator[Domain], "Tất cả 10 Mảng Phát Triển")
+VAR _SelectedCountry = SELECTEDVALUE(Dim_Country[CountryName], "Toàn khối ASEAN")
 VAR _SelectedYear = SELECTEDVALUE(Dim_Date[Year], "Giai đoạn 2015-2025")
 RETURN
-"Báo cáo Chi tiết: " & _SelectedDomain & " - " & _SelectedYear
+"Báo cáo Phát triển: " & _SelectedDomain & " | " & _SelectedCountry & " (" & _SelectedYear & ")"
+
+// Selected Indicator Display Name
+[Selected Indicator Name] = 
+SELECTEDVALUE(Dim_Indicator[SeriesName], "Vui lòng chọn 1 chỉ số cụ thể")
+
+// Selected Country Display Name
+[Selected Country Name] = 
+SELECTEDVALUE(Dim_Country[CountryName], "Khối 10 Nước ASEAN + Timor-Leste")
+
+// Dynamic KPI Status Indicator Flag (1 = Positive, -1 = Negative, 0 = Neutral)
+[KPI Status Flag] = 
+VAR _YoY = [Indicator Value YoY %]
+RETURN
+SWITCH(
+    TRUE(),
+    _YoY > 0.02, 1,    // Tăng trưởng tích cực > 2%
+    _YoY < -0.02, -1,  // Suy giảm rủi ro < -2%
+    0                  // Ổn định (-2% đến +2%)
+)

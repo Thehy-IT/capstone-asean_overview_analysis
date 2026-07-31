@@ -1,0 +1,17 @@
+relationship AutoDetected_cff0cecf-1c10-431e-a87e-0d16b9b93c48
+	fromColumn: Fact_ASEAN_Indicators.CountryCode
+	toColumn: Dim_Country.CountryCode
+
+relationship AutoDetected_9826ae56-6c6e-4227-8ac5-ece6649d7078
+	fromColumn: Fact_ASEAN_Indicators.SeriesCode
+	toColumn: Dim_Indicator.SeriesCode
+
+relationship caeb21c9-ca9a-07c1-c831-f624a412ce50
+	fromColumn: Fact_ASEAN_Tourism_Flow.DestinationCountryCode
+	toColumn: Dim_Country.CountryCode
+
+relationship cca6f5aa-2112-459e-ad61-3b1c781c56b9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Date.Date
+	toColumn: LocalDateTable_b44e70e0-289a-407c-a589-898c0492d39f.Date
+
