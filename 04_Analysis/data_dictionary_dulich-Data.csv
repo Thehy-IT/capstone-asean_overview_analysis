@@ -1,0 +1,13 @@
+﻿Tên cột,Kiểu dữ liệu,Số lượng Non-Null,Tỷ lệ thiếu (%),Số giá trị duy nhất,Giá trị mẫu,Phân loại vai trò
+Unnamed: 0,str,12,90.5,12,Destination Country,Tên chỉ số (Indicator)
+Unnamed: 1,str,126,0.0,14,Origin Country,Tên chỉ số (Indicator)
+Year,str,101,19.8,101,2016,Thời gian (Date/Year)
+Unnamed: 3,str,114,9.5,114,2017,Tên chỉ số (Indicator)
+Unnamed: 4,str,120,4.8,120,2018,Tên chỉ số (Indicator)
+Unnamed: 5,str,116,7.9,116,2019,Tên chỉ số (Indicator)
+Unnamed: 6,str,116,7.9,115,2020,Tên chỉ số (Indicator)
+Unnamed: 7,str,98,22.2,94,2021,Tên chỉ số (Indicator)
+Unnamed: 8,str,117,7.1,117,2022,Tên chỉ số (Indicator)
+Unnamed: 9,str,117,7.1,117,2023,Tên chỉ số (Indicator)
+Unnamed: 10,str,121,4.0,121,2024,Tên chỉ số (Indicator)
+Unnamed: 11,str,120,4.8,120,2025,Tên chỉ số (Indicator)

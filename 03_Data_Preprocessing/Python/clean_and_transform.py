@@ -169,6 +169,9 @@ def parse_tourism_file(file_path, domain):
                 if col_idx < len(row):
                     clean_num = clean_val(row[col_idx])
                     if clean_num is not None:
+                        # FIX: Skip self-referential rows (Origin == Destination)
+                        if origin_code == dest_code:
+                            continue
                         # Flow record
                         flow_rows.append({
                             "DestinationCountryCode": dest_code,
@@ -181,6 +184,8 @@ def parse_tourism_file(file_path, domain):
                         tot_arrivals_agg[key] = tot_arrivals_agg.get(key, 0.0) + clean_num
 
         for (d_code, yr), tot_val in tot_arrivals_agg.items():
+            # FIX: resolve proper country name from metadata (not ISO code)
+            proper_name = ASEAN_COUNTRIES_META.get(d_code, {}).get("CountryName", d_code)
             fact_rows.append({
                 "CountryCode": d_code,
                 "SeriesCode": series_code_tot,
@@ -188,7 +193,7 @@ def parse_tourism_file(file_path, domain):
                 "Value": tot_val
             })
             master_rows.append({
-                "CountryName": d_code,
+                "CountryName": proper_name,  # FIX: use proper name, not code
                 "CountryCode": d_code,
                 "SeriesName": "Tổng lượt khách du lịch quốc tế nhập cảnh từ các nước ASEAN",
                 "SeriesCode": series_code_tot,
