@@ -1,14 +1,15 @@
 // =========================================================================
-// POWER QUERY M-CODE SCRIPT FOR POWER BI DATA IMPORT (REFACTORED)
+// POWER QUERY M-CODE SCRIPT FOR POWER BI DATA IMPORT (FULLY SYNCHRONIZED)
 // Project: capstone-asean_overview_analysis
 // Architecture: Star Schema (Fact + Fact Flow + Dimensions)
+// Refactored: Fully synchronized with all 9 columns of Dim_Country and 7 columns of Dim_Date
 // =========================================================================
 
 // -------------------------------------------------------------------------
 // 1. QUERY: Dim_Country
 // -------------------------------------------------------------------------
 let
-    Source = Csv.Document(File.Contents("D:\kelangthanghocIT\UTH\capstone-asean_overview_analysis\02_Data\Cleaned\Dim_Country.csv"),[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+    Source = Csv.Document(File.Contents("D:\kelangthanghocIT\UTH\capstone-asean_overview_analysis\02_Data\Cleaned\Dim_Country.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
     #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
     #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
         {"CountryCode", type text},
@@ -17,7 +18,9 @@ let
         {"Capital", type text},
         {"ISO2", type text},
         {"Latitude", type number},
-        {"Longitude", type number}
+        {"Longitude", type number},
+        {"MemberStatus", type text},
+        {"DataNote", type text}
     })
 in
     #"Changed Type"
@@ -43,14 +46,16 @@ in
 // 3. QUERY: Dim_Date (Power BI Time Intelligence Supported)
 // -------------------------------------------------------------------------
 let
-    Source = Csv.Document(File.Contents("D:\kelangthanghocIT\UTH\capstone-asean_overview_analysis\02_Data\Cleaned\Dim_Date.csv"),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+    Source = Csv.Document(File.Contents("D:\kelangthanghocIT\UTH\capstone-asean_overview_analysis\02_Data\Cleaned\Dim_Date.csv"),[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
     #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
     #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
         {"Year", Int64.Type},
         {"Date", type date},
         {"YearLabel", type text},
         {"Decade", type text},
-        {"Period", type text}
+        {"Period", type text},
+        {"DataStatus", type text},
+        {"IsCurrentYear", type logical}
     })
 in
     #"Changed Type"

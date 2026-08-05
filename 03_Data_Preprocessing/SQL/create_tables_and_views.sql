@@ -1,7 +1,8 @@
 -- =========================================================================
--- SQL DDL & ANALYTICAL VIEWS FOR ASEAN CAPSTONE DATASET
+-- SQL DDL & ANALYTICAL VIEWS FOR ASEAN CAPSTONE DATASET (FULLY SYNCHRONIZED)
 -- Project: capstone-asean_overview_analysis
 -- Database Compatibility: PostgreSQL / SQLite / SQL Server / MySQL
+-- Refactored: Fully synchronized with all 9 columns of Dim_Country and 7 columns of Dim_Date
 -- =========================================================================
 
 -- -------------------------------------------------------------------------
@@ -15,7 +16,9 @@ CREATE TABLE Dim_Country (
     Capital VARCHAR(100),
     ISO2 VARCHAR(2),
     Latitude DECIMAL(9,6),
-    Longitude DECIMAL(9,6)
+    Longitude DECIMAL(9,6),
+    MemberStatus VARCHAR(50),
+    DataNote TEXT
 );
 
 -- -------------------------------------------------------------------------
@@ -38,7 +41,9 @@ CREATE TABLE Dim_Date (
     Date DATE NOT NULL,
     YearLabel VARCHAR(20),
     Decade VARCHAR(20),
-    Period VARCHAR(20)
+    Period VARCHAR(20),
+    DataStatus VARCHAR(50),
+    IsCurrentYear BOOLEAN
 );
 
 -- -------------------------------------------------------------------------
@@ -62,11 +67,12 @@ CREATE TABLE Fact_ASEAN_Indicators (
 DROP TABLE IF EXISTS Fact_ASEAN_Tourism_Flow;
 CREATE TABLE Fact_ASEAN_Tourism_Flow (
     DestinationCountryCode VARCHAR(3) NOT NULL,
-    OriginCountryCode VARCHAR(50) NOT NULL,
+    OriginCountryCode VARCHAR(3) NOT NULL,
     Year INT NOT NULL,
     Visitors DECIMAL(18,4),
     PRIMARY KEY (DestinationCountryCode, OriginCountryCode, Year),
     FOREIGN KEY (DestinationCountryCode) REFERENCES Dim_Country(CountryCode),
+    FOREIGN KEY (OriginCountryCode) REFERENCES Dim_Country(CountryCode),
     FOREIGN KEY (Year) REFERENCES Dim_Date(Year)
 );
 
@@ -80,6 +86,7 @@ CREATE VIEW vw_ASEAN_GDP_Overview AS
 SELECT 
     c.CountryName,
     c.SubRegion,
+    c.MemberStatus,
     f.Year,
     f.Value AS GDP_Current_USD
 FROM Fact_ASEAN_Indicators f
@@ -90,6 +97,7 @@ WHERE f.SeriesCode = 'NY.GDP.MKTP.CD';
 CREATE VIEW vw_ASEAN_Tech_Adoption AS
 SELECT 
     c.CountryName,
+    c.SubRegion,
     f.Year,
     f.Value AS Internet_User_Pct
 FROM Fact_ASEAN_Indicators f
