@@ -153,7 +153,7 @@ erDiagram
 
     Dim_Date {
         int Year PK "Năm phân tích (2015-2025)"
-        date Date "Ngày chuẩn YYYY-01-01 (Mark as Date Table)"
+        date Date "Ngày đại diện YYYY-01-01 (Kiến trúc Hạt nhân Hàng năm - Annual Grain)"
         string YearLabel "Nhãn hiển thị (Năm 2023)"
         string Decade "Thập kỷ"
         string Period "Giai đoạn 5 năm"
@@ -240,7 +240,7 @@ python 08_Source_Code/main.py
 ### 2. Các bước Import và Tích hợp trên Power BI Desktop
 
 1. **Nạp Dữ liệu Sạch:** Mở Power BI Desktop $\rightarrow$ `Get Data` $\rightarrow$ Chọn nạp 5 tệp CSV từ thư mục [`02_Data/Cleaned`](file:///D:/kelangthanghocIT/UTH/capstone-asean_overview_analysis/02_Data/Cleaned) (hoặc sử dụng script M-code từ [`Load_Star_Schema.m`](file:///D:/kelangthanghocIT/UTH/capstone-asean_overview_analysis/03_Data_Preprocessing/PowerQuery/Load_Star_Schema.m)).
-2. **Cấu hình Bảng Thời gian:** Nhấp chuột phải bảng `Dim_Date` $\rightarrow$ `Mark as Date Table` $\rightarrow$ Chọn cột `Date`.
+2. **Tạo Mối Quan hệ Bảng Thời gian (Annual Grain Data Architecture):** Do dữ liệu World Bank mang độ mịn hạt nhân theo **Năm (Annual Grain)**, KHÔNG CẦN bấm "Mark as Date Table" (vì quy chuẩn Power BI yêu cầu chuỗi 365 ngày/năm). Tạo mối quan hệ `1:N` giữa `Dim_Date[Year]` và `Fact_ASEAN_Indicators[Year]` để thực thi các công thức Time Intelligence đã được thiết kế sẵn.
 3. **Nạp Thư viện DAX Measures:** Sao chép các công thức tính toán từ tệp [`DAX_Measures.dax`](file:///D:/kelangthanghocIT/UTH/capstone-asean_overview_analysis/05_PowerBI/Dataset/DAX_Measures.dax).
 4. **Áp dụng Bảng màu Theme:** Vào menu `View` $\rightarrow$ `Themes` $\rightarrow$ `Browse for Themes` $\rightarrow$ Chọn tệp cấu hình giao diện tối [`ASEAN_Dark_Professional_Theme.json`](file:///D:/kelangthanghocIT/UTH/capstone-asean_overview_analysis/05_PowerBI/Theme/ASEAN_Dark_Professional_Theme.json).
 5. **Thiết kế Báo cáo theo Wireframe:** Tuân thủ bản thiết kế UI/UX Blueprint 4 trang tại [`Dashboard_Specification.md`](file:///D:/kelangthanghocIT/UTH/capstone-asean_overview_analysis/05_PowerBI/Export/Dashboard_Specification.md).
