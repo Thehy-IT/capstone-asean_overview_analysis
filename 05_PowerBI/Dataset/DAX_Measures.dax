@@ -1,10 +1,12 @@
 // =========================================================================
-// POWER BI DAX MEASURE LIBRARY (ENTERPRISE PRODUCTION-GRADE)
+// POWER BI DAX MEASURE LIBRARY (ENTERPRISE PRODUCTION-GRADE - ULTRA-STRICT REFACTORED)
 // Project: ASEAN Socio-Economic & Development Analysis (2015 - 2025)
 // Author: 20-Year Senior BI Solution Architect
 // Description: Comprehensive DAX Measure definitions covering 10 Socio-Economic 
 //              Domains, Time Intelligence, Dynamic KPI Headers, Benchmarking,
-//              and Power BI Star Schema Optimization.
+//              and Power BI Star Schema Optimization. Rigorously Refactored for
+//              Stock vs Flow, Role-Playing Relationships, Context-Aware Benchmarks,
+//              Multi-Select Dynamic Headers, and Indicator Polarity.
 // =========================================================================
 
 
@@ -16,7 +18,7 @@
 [Total Records] = 
 COUNTROWS(Fact_ASEAN_Indicators)
 
-// Total Value (Generic Aggregate Sum)
+// Total Value (Generic Aggregate Sum - Note: Only meaningful when filtered to a single indicator)
 [Total Indicator Value] = 
 SUM(Fact_ASEAN_Indicators[Value])
 
@@ -91,11 +93,14 @@ CALCULATE(
 // SECTION 3: DEMOGRAPHICS & POPULATION DOMAIN MEASURES (13 INDICATORS)
 // =========================================================================
 
-// 1. Total Population
+// 1. Total Population (Stock Measure: Evaluates for Latest Selected Year)
 [Total Population] = 
+VAR _LatestYear = MAX(Dim_Date[Year])
+RETURN
 CALCULATE(
     SUM(Fact_ASEAN_Indicators[Value]),
-    Dim_Indicator[SeriesCode] = "SP.POP.TOTL"
+    Dim_Indicator[SeriesCode] = "SP.POP.TOTL",
+    Dim_Date[Year] = _LatestYear
 )
 
 // 2. Population Growth Rate (%)
@@ -105,11 +110,14 @@ CALCULATE(
     Dim_Indicator[SeriesCode] = "SP.POP.GROW"
 )
 
-// 3. Female Population (Absolute)
+// 3. Female Population (Absolute - Stock Measure: Evaluates for Latest Selected Year)
 [Female Population] = 
+VAR _LatestYear = MAX(Dim_Date[Year])
+RETURN
 CALCULATE(
     SUM(Fact_ASEAN_Indicators[Value]),
-    Dim_Indicator[SeriesCode] = "SP.POP.TOTL.FE.IN"
+    Dim_Indicator[SeriesCode] = "SP.POP.TOTL.FE.IN",
+    Dim_Date[Year] = _LatestYear
 )
 
 // 4. Female Population (% of Total)
@@ -119,11 +127,14 @@ CALCULATE(
     Dim_Indicator[SeriesCode] = "SP.POP.TOTL.FE.ZS"
 )
 
-// 5. Male Population (Absolute)
+// 5. Male Population (Absolute - Stock Measure: Evaluates for Latest Selected Year)
 [Male Population] = 
+VAR _LatestYear = MAX(Dim_Date[Year])
+RETURN
 CALCULATE(
     SUM(Fact_ASEAN_Indicators[Value]),
-    Dim_Indicator[SeriesCode] = "SP.POP.TOTL.MA.IN"
+    Dim_Indicator[SeriesCode] = "SP.POP.TOTL.MA.IN",
+    Dim_Date[Year] = _LatestYear
 )
 
 // 6. Male Population (% of Total)
@@ -480,9 +491,16 @@ CALCULATE(
     Dim_Indicator[SeriesCode] = "ST.INT.ARVL.TOTL"
 )
 
-// 2. Tourism Visitors Flow (Matrix Flow Fact Table)
-[Tourism Visitors Flow] = 
+// 2. Tourism Visitors Flow - Destination Perspective (Active Relationship)
+[Tourism Visitors Flow (Destination)] = 
 SUM(Fact_ASEAN_Tourism_Flow[Visitors])
+
+// 3. Tourism Visitors Flow - Origin Perspective (Role-Playing Relationship)
+[Tourism Visitors Flow (Origin)] = 
+CALCULATE(
+    SUM(Fact_ASEAN_Tourism_Flow[Visitors]),
+    USERELATIONSHIP(Dim_Country[CountryCode], Fact_ASEAN_Tourism_Flow[OriginCountryCode])
+)
 
 // Top Tourism Corridor Flow Visitors
 [Top Corridor Visitors] = 
@@ -492,7 +510,7 @@ MAXX(
         Fact_ASEAN_Tourism_Flow[DestinationCountryCode],
         Fact_ASEAN_Tourism_Flow[OriginCountryCode]
     ),
-    [Tourism Visitors Flow]
+    [Tourism Visitors Flow (Destination)]
 )
 
 
@@ -565,14 +583,17 @@ CALCULATE(
 
 
 // =========================================================================
-// SECTION 12: TIME INTELLIGENCE & YOY COMPARATIVE MEASURES
+// SECTION 12: TIME INTELLIGENCE & YOY COMPARATIVE MEASURES (ANNUAL GRAIN REFACTORED)
 // =========================================================================
 
-// Generic Prior Year Value
+// Generic Prior Year Value (Annual Grain Time Intelligence)
 [Indicator Value PY] = 
+VAR _CurrentYear = MAX(Dim_Date[Year])
+RETURN
 CALCULATE(
     [Total Indicator Value],
-    SAMEPERIODLASTYEAR(Dim_Date[Date])
+    ALL(Dim_Date),
+    Dim_Date[Year] = _CurrentYear - 1
 )
 
 // Generic Year-over-Year (YoY) Difference Change
@@ -586,35 +607,47 @@ IF(
     BLANK()
 )
 
-// Generic Year-over-Year (YoY) Percentage Growth
+// Generic Year-over-Year (YoY) Percentage Growth (Safe Divide with BLANK Handling)
 [Indicator Value YoY %] = 
 VAR _Current = [Total Indicator Value]
 VAR _Previous = [Indicator Value PY]
 RETURN
-DIVIDE(
-    _Current - _Previous,
-    _Previous,
-    0
+IF(
+    NOT ISBLANK(_Current) && NOT ISBLANK(_Previous),
+    DIVIDE(_Current - _Previous, _Previous),
+    BLANK()
 )
 
-// GDP Prior Year
+// GDP Prior Year (Annual Grain Time Intelligence)
 [GDP PY] = 
+VAR _CurrentYear = MAX(Dim_Date[Year])
+RETURN
 CALCULATE(
     [GDP (Current US$)],
-    SAMEPERIODLASTYEAR(Dim_Date[Date])
+    ALL(Dim_Date),
+    Dim_Date[Year] = _CurrentYear - 1
 )
 
-// GDP YoY Growth Percentage
+// GDP YoY Growth Percentage (Safe Divide without Forced 0)
 [GDP YoY %] = 
 VAR _CurrentGDP = [GDP (Current US$)]
 VAR _PreviousGDP = [GDP PY]
 RETURN
-DIVIDE(_CurrentGDP - _PreviousGDP, _PreviousGDP, 0)
+IF(
+    NOT ISBLANK(_CurrentGDP) && NOT ISBLANK(_PreviousGDP),
+    DIVIDE(_CurrentGDP - _PreviousGDP, _PreviousGDP),
+    BLANK()
+)
 
 // Internet Users YoY Change (% Points)
 [Internet Users YoY Change] = 
+VAR _CurrentYear = MAX(Dim_Date[Year])
 VAR _Current = [Internet Users (% Pop)]
-VAR _Previous = CALCULATE([Internet Users (% Pop)], SAMEPERIODLASTYEAR(Dim_Date[Date]))
+VAR _Previous = CALCULATE(
+    [Internet Users (% Pop)],
+    ALL(Dim_Date),
+    Dim_Date[Year] = _CurrentYear - 1
+)
 RETURN
 IF(NOT ISBLANK(_Current) && NOT ISBLANK(_Previous), _Current - _Previous, BLANK())
 
@@ -623,10 +656,10 @@ IF(NOT ISBLANK(_Current) && NOT ISBLANK(_Previous), _Current - _Previous, BLANK(
 // SECTION 13: RANKING & BENCHMARKING (DYNAMIC BENCHMARKS ACROSS ASEAN)
 // =========================================================================
 
-// Country GDP Rank within ASEAN
+// Country GDP Rank within ASEAN (Flexibly Handles Country Code & Name Scope)
 [GDP Rank ASEAN] = 
 IF(
-    ISINSCOPE(Dim_Country[CountryName]),
+    HASONEVALUE(Dim_Country[CountryCode]) || HASONEVALUE(Dim_Country[CountryName]),
     RANKX(
         ALLSELECTED(Dim_Country),
         [GDP (Current US$)],
@@ -637,14 +670,18 @@ IF(
     BLANK()
 )
 
-// Country GDP Share of Total ASEAN (%)
+// Country GDP Share of Total Filtered ASEAN (%) (Respects SubRegion Slicers via ALLSELECTED)
 [GDP Share of ASEAN (%)] = 
 VAR _CountryGDP = [GDP (Current US$)]
-VAR _TotalASEANGDP = CALCULATE([GDP (Current US$)], ALL(Dim_Country))
+VAR _TotalASEANGDP = CALCULATE([GDP (Current US$)], ALLSELECTED(Dim_Country))
 RETURN
-DIVIDE(_CountryGDP, _TotalASEANGDP, 0)
+IF(
+    NOT ISBLANK(_CountryGDP) && NOT ISBLANK(_TotalASEANGDP),
+    DIVIDE(_CountryGDP, _TotalASEANGDP),
+    BLANK()
+)
 
-// Top 3 ASEAN GDP Share Combined (%)
+// Top 3 ASEAN GDP Share Combined (%) (Safe Divide Handling)
 [GDP Share Top 3 (%)] = 
 VAR _Top3GDP = 
     SUMX(
@@ -656,45 +693,88 @@ VAR _Top3GDP =
         ),
         [GDP (Current US$)]
     )
-VAR _TotalASEANGDP = CALCULATE([GDP (Current US$)], ALL(Dim_Country))
+VAR _TotalASEANGDP = CALCULATE([GDP (Current US$)], ALLSELECTED(Dim_Country))
 RETURN
-DIVIDE(_Top3GDP, _TotalASEANGDP, 0)
+IF(
+    NOT ISBLANK(_Top3GDP) && NOT ISBLANK(_TotalASEANGDP),
+    DIVIDE(_Top3GDP, _TotalASEANGDP),
+    BLANK()
+)
 
-// Country Indicator Value Delta vs ASEAN Average
+// Country Indicator Value Delta vs ASEAN Average (Respects SubRegion Slicers via ALLSELECTED)
 [Country Delta vs ASEAN Avg] = 
 VAR _CountryVal = [Avg Indicator Value]
-VAR _ASEANAvg = CALCULATE([Avg Indicator Value], ALL(Dim_Country))
+VAR _ASEANAvg = CALCULATE([Avg Indicator Value], ALLSELECTED(Dim_Country))
 RETURN
-_CountryVal - _ASEANAvg
+IF(
+    NOT ISBLANK(_CountryVal) && NOT ISBLANK(_ASEANAvg),
+    _CountryVal - _ASEANAvg,
+    BLANK()
+)
 
 
 // =========================================================================
 // SECTION 14: DYNAMIC KPI HEADERS & UI HELPER MEASURES
 // =========================================================================
 
-// Dynamic Title for Dashboard Visuals
+// Dynamic Title for Dashboard Visuals (Handles Single-Select, Multi-Select & All-Select)
 [Dynamic Dashboard Title] = 
 VAR _SelectedDomain = SELECTEDVALUE(Dim_Indicator[Domain], "Tất cả 10 Mảng Phát Triển")
-VAR _SelectedCountry = SELECTEDVALUE(Dim_Country[CountryName], "Toàn khối ASEAN")
+VAR _CountryCount = COUNTROWS(VALUES(Dim_Country[CountryName]))
+VAR _TotalCountries = CALCULATE(COUNTROWS(Dim_Country), ALL(Dim_Country))
+VAR _SelectedCountryText = 
+    SWITCH(
+        TRUE(),
+        _CountryCount = 1, SELECTEDVALUE(Dim_Country[CountryName]),
+        _CountryCount < _TotalCountries, _CountryCount & " Quốc gia được chọn",
+        "Toàn khối ASEAN"
+    )
 VAR _SelectedYear = SELECTEDVALUE(Dim_Date[Year], "Giai đoạn 2015-2025")
 RETURN
-"Báo cáo Phát triển: " & _SelectedDomain & " | " & _SelectedCountry & " (" & _SelectedYear & ")"
+"Báo cáo Phát triển: " & _SelectedDomain & " | " & _SelectedCountryText & " (" & _SelectedYear & ")"
 
 // Selected Indicator Display Name
 [Selected Indicator Name] = 
 SELECTEDVALUE(Dim_Indicator[SeriesName], "Vui lòng chọn 1 chỉ số cụ thể")
 
-// Selected Country Display Name
+// Selected Country Display Name (Handles Multi-Select)
 [Selected Country Name] = 
-SELECTEDVALUE(Dim_Country[CountryName], "Khối 10 Nước ASEAN + Timor-Leste")
-
-// Dynamic KPI Status Indicator Flag (1 = Positive, -1 = Negative, 0 = Neutral)
-[KPI Status Flag] = 
-VAR _YoY = [Indicator Value YoY %]
+VAR _CountryCount = COUNTROWS(VALUES(Dim_Country[CountryName]))
+VAR _TotalCountries = CALCULATE(COUNTROWS(Dim_Country), ALL(Dim_Country))
 RETURN
 SWITCH(
     TRUE(),
-    _YoY > 0.02, 1,    // Tăng trưởng tích cực > 2%
-    _YoY < -0.02, -1,  // Suy giảm rủi ro < -2%
+    _CountryCount = 1, SELECTEDVALUE(Dim_Country[CountryName]),
+    _CountryCount < _TotalCountries, _CountryCount & " Quốc gia được chọn",
+    "Khối 10 Nước ASEAN + Timor-Leste"
+)
+
+// Dynamic KPI Status Indicator Flag (1 = Positive, -1 = Negative, 0 = Neutral)
+// Refactored: Dynamically inverts direction for negative/cost indicators (Unemployment, Inflation, Mortality, CO2, Debt)
+[KPI Status Flag] = 
+VAR _YoY = [Indicator Value YoY %]
+VAR _SeriesCode = SELECTEDVALUE(Dim_Indicator[SeriesCode])
+VAR _IsInverse = _SeriesCode IN {
+    "SL.UEM.TOTL.ZS",    // Total Unemployment Rate
+    "SL.UEM.1524.ZS",    // Youth Unemployment Rate
+    "FP.CPI.TOTL.ZG",    // Inflation Rate
+    "SH.DYN.MORT",       // Under-5 Mortality Rate
+    "SH.DYN.MORT.FE",    // Under-5 Female Mortality Rate
+    "SH.DYN.MORT.MA",    // Under-5 Male Mortality Rate
+    "SH.STA.MMRT",       // Maternal Mortality Ratio (Modeled)
+    "SH.STA.MMRT.NE",    // Maternal Mortality Ratio (National)
+    "NY.ADJ.DCO2.GN.ZS", // CO2 Damage (% GNI)
+    "GC.DOD.TOTL.GD.ZS"  // Government Debt (% GDP)
+}
+VAR _RawFlag = SWITCH(
+    TRUE(),
+    _YoY > 0.02, 1,    // Tăng trưởng > +2%
+    _YoY < -0.02, -1,  // Suy giảm < -2%
     0                  // Ổn định (-2% đến +2%)
+)
+RETURN
+IF(
+    ISBLANK(_YoY), 
+    BLANK(), 
+    IF(_IsInverse, -1 * _RawFlag, _RawFlag)
 )
