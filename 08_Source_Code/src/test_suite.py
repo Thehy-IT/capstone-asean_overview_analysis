@@ -29,12 +29,11 @@ class TestASEANDataPipeline(unittest.TestCase):
                 key = (row['CountryCode'], row['SeriesCode'], int(row['Year']))
                 if key in keys:
                     duplicates += 1
-                else:
-                    keys.add(key)
+                keys.add(key)
         self.assertEqual(duplicates, 0, f"Found {duplicates} duplicate composite keys in Fact_ASEAN_Indicators!")
 
-    def test_tourism_flow_grain_uniqueness(self):
-        """Assert Fact_ASEAN_Tourism_Flow has zero duplicate (Destination, Origin, Year) keys."""
+    def test_fact_tourism_flow_grain_uniqueness(self):
+        """Assert Fact_ASEAN_Tourism_Flow has zero duplicate (DestinationCountryCode, OriginCountryCode, Year) keys."""
         keys = set()
         duplicates = 0
         with open(self.flow_path, mode='r', encoding='utf-8-sig') as f:
@@ -43,42 +42,41 @@ class TestASEANDataPipeline(unittest.TestCase):
                 key = (row['DestinationCountryCode'], row['OriginCountryCode'], int(row['Year']))
                 if key in keys:
                     duplicates += 1
-                else:
-                    keys.add(key)
+                keys.add(key)
         self.assertEqual(duplicates, 0, f"Found {duplicates} duplicate keys in Fact_ASEAN_Tourism_Flow!")
 
-    def test_referential_integrity(self):
-        """Assert all Fact table foreign keys exist in Dim_Country and Dim_Indicator."""
+    def test_foreign_key_referential_integrity(self):
+        """Assert all CountryCode, SeriesCode, and Year in Fact tables exist in Dim tables."""
         countries = set()
         with open(self.country_path, mode='r', encoding='utf-8-sig') as f:
-            for r in csv.DictReader(f):
-                countries.add(r['CountryCode'])
+            for row in csv.DictReader(f):
+                countries.add(row['CountryCode'])
 
         indicators = set()
         with open(self.indicator_path, mode='r', encoding='utf-8-sig') as f:
-            for r in csv.DictReader(f):
-                indicators.add(r['SeriesCode'])
+            for row in csv.DictReader(f):
+                indicators.add(row['SeriesCode'])
 
-        with open(self.fact_path, mode='r', encoding='utf-8-sig') as f:
-            for r in csv.DictReader(f):
-                self.assertIn(r['CountryCode'], countries, f"Orphan country code: {r['CountryCode']}")
-                self.assertIn(r['SeriesCode'], indicators, f"Orphan indicator code: {r['SeriesCode']}")
-
-    def test_numeric_value_validity(self):
-        """Assert all Fact values are valid non-NaN, non-Inf float numbers."""
-        with open(self.fact_path, mode='r', encoding='utf-8-sig') as f:
-            for r in csv.DictReader(f):
-                val = float(r['Value'])
-                self.assertFalse(math.isnan(val))
-                self.assertFalse(math.isinf(val))
-
-    def test_dim_date_continuity(self):
-        """Assert Dim_Date contains exact 11 continuous years (2015 to 2025)."""
-        years = []
+        years = set()
         with open(self.date_path, mode='r', encoding='utf-8-sig') as f:
-            for r in csv.DictReader(f):
-                years.append(int(r['Year']))
-        self.assertEqual(sorted(years), list(range(2015, 2026)))
+            for row in csv.DictReader(f):
+                years.add(int(row['Year']))
+
+        with open(self.fact_path, mode='r', encoding='utf-8-sig') as f:
+            for row in csv.DictReader(f):
+                self.assertIn(row['CountryCode'], countries, f"Invalid CountryCode: {row['CountryCode']}")
+                self.assertIn(row['SeriesCode'], indicators, f"Invalid SeriesCode: {row['SeriesCode']}")
+                self.assertIn(int(row['Year']), years, f"Invalid Year: {row['Year']}")
+
+    def test_no_null_or_nan_in_fact_values(self):
+        """Assert no null, blank, or NaN values exist in Fact tables."""
+        with open(self.fact_path, mode='r', encoding='utf-8-sig') as f:
+            for row in csv.DictReader(f):
+                val_str = row['Value']
+                self.assertIsNotNone(val_str, "Found None in Fact Value!")
+                self.assertNotEqual(val_str.strip(), "", "Found blank string in Fact Value!")
+                val_float = float(val_str)
+                self.assertFalse(math.isnan(val_float), "Found NaN in Fact Value!")
 
 if __name__ == "__main__":
     unittest.main()

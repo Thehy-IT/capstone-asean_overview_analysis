@@ -1,4 +1,4 @@
-CountryCode,CountryName,SubRegion,Capital,ISO2,Latitude,Longitude,MemberStatus,DataNote
+﻿CountryCode,CountryName,SubRegion,Capital,ISO2,Latitude,Longitude,MemberStatus,DataNote
 BRN,Brunei Darussalam,Maritime ASEAN,Bandar Seri Begawan,BN,4.5353,114.7277,Full Member,
 KHM,Cambodia,Mainland ASEAN,Phnom Penh,KH,12.5657,104.991,Full Member,
 IDN,Indonesia,Maritime ASEAN,Jakarta,ID,-0.7893,113.9213,Full Member,

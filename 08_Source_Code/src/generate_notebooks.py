@@ -1,4 +1,13 @@
-{
+import os
+import json
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+ANALYSIS_DIR = os.path.join(BASE_DIR, "04_Analysis")
+
+os.makedirs(ANALYSIS_DIR, exist_ok=True)
+
+# 1. BUILD EDA.ipynb
+eda_nb = {
   "cells": [
     {
       "cell_type": "markdown",
@@ -12,7 +21,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": null,
+      "execution_count": None,
       "metadata": {},
       "outputs": [],
       "source": [
@@ -32,10 +41,17 @@
     }
   ],
   "metadata": {
-    "language_info": {
-      "name": "python"
-    }
+    "language_info": { "name": "python" }
   },
   "nbformat": 4,
   "nbformat_minor": 2
 }
+
+def generate():
+    eda_path = os.path.join(ANALYSIS_DIR, "EDA.ipynb")
+    with open(eda_path, mode='w', encoding='utf-8') as f:
+        json.dump(eda_nb, f, indent=2)
+    print(f"Generated notebook: {eda_path}")
+
+if __name__ == "__main__":
+    generate()

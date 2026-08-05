@@ -46,19 +46,19 @@ COUNTRY_CODE_MAP = {
     "TLS": "TLS", "TL": "TLS", "Timor-Leste": "TLS"
 }
 
-# Rich ASEAN Country Dimension Data
+# Rich ASEAN Country Dimension Data (with MemberStatus and DataNote)
 ASEAN_COUNTRIES_META = {
-    "BRN": {"CountryName": "Brunei Darussalam", "SubRegion": "Maritime ASEAN", "Capital": "Bandar Seri Begawan", "ISO2": "BN", "Latitude": 4.5353, "Longitude": 114.7277},
-    "KHM": {"CountryName": "Cambodia", "SubRegion": "Mainland ASEAN", "Capital": "Phnom Penh", "ISO2": "KH", "Latitude": 12.5657, "Longitude": 104.9910},
-    "IDN": {"CountryName": "Indonesia", "SubRegion": "Maritime ASEAN", "Capital": "Jakarta", "ISO2": "ID", "Latitude": -0.7893, "Longitude": 113.9213},
-    "LAO": {"CountryName": "Lao PDR", "SubRegion": "Mainland ASEAN", "Capital": "Vientiane", "ISO2": "LA", "Latitude": 19.8563, "Longitude": 102.4955},
-    "MYS": {"CountryName": "Malaysia", "SubRegion": "Maritime ASEAN", "Capital": "Kuala Lumpur", "ISO2": "MY", "Latitude": 4.2105, "Longitude": 101.9758},
-    "MMR": {"CountryName": "Myanmar", "SubRegion": "Mainland ASEAN", "Capital": "Naypyidaw", "ISO2": "MM", "Latitude": 21.9162, "Longitude": 95.9560},
-    "PHL": {"CountryName": "Philippines", "SubRegion": "Maritime ASEAN", "Capital": "Manila", "ISO2": "PH", "Latitude": 12.8797, "Longitude": 121.7740},
-    "SGP": {"CountryName": "Singapore", "SubRegion": "Maritime ASEAN", "Capital": "Singapore", "ISO2": "SG", "Latitude": 1.3521, "Longitude": 103.8198},
-    "THA": {"CountryName": "Thailand", "SubRegion": "Mainland ASEAN", "Capital": "Bangkok", "ISO2": "TH", "Latitude": 15.8700, "Longitude": 100.9925},
-    "VNM": {"CountryName": "Viet Nam", "SubRegion": "Mainland ASEAN", "Capital": "Hanoi", "ISO2": "VN", "Latitude": 14.0583, "Longitude": 108.2772},
-    "TLS": {"CountryName": "Timor-Leste", "SubRegion": "Observer Candidate", "Capital": "Dili", "ISO2": "TL", "Latitude": -8.5569, "Longitude": 125.5603}
+    "BRN": {"CountryName": "Brunei Darussalam", "SubRegion": "Maritime ASEAN", "Capital": "Bandar Seri Begawan", "ISO2": "BN", "Latitude": 4.5353, "Longitude": 114.7277, "MemberStatus": "Full Member", "DataNote": ""},
+    "KHM": {"CountryName": "Cambodia", "SubRegion": "Mainland ASEAN", "Capital": "Phnom Penh", "ISO2": "KH", "Latitude": 12.5657, "Longitude": 104.9910, "MemberStatus": "Full Member", "DataNote": ""},
+    "IDN": {"CountryName": "Indonesia", "SubRegion": "Maritime ASEAN", "Capital": "Jakarta", "ISO2": "ID", "Latitude": -0.7893, "Longitude": 113.9213, "MemberStatus": "Full Member", "DataNote": ""},
+    "LAO": {"CountryName": "Lao PDR", "SubRegion": "Mainland ASEAN", "Capital": "Vientiane", "ISO2": "LA", "Latitude": 19.8563, "Longitude": 102.4955, "MemberStatus": "Full Member", "DataNote": ""},
+    "MYS": {"CountryName": "Malaysia", "SubRegion": "Maritime ASEAN", "Capital": "Kuala Lumpur", "ISO2": "MY", "Latitude": 4.2105, "Longitude": 101.9758, "MemberStatus": "Full Member", "DataNote": ""},
+    "MMR": {"CountryName": "Myanmar", "SubRegion": "Mainland ASEAN", "Capital": "Naypyidaw", "ISO2": "MM", "Latitude": 21.9162, "Longitude": 95.9560, "MemberStatus": "Full Member", "DataNote": "Data gaps post-2021 due to political disruption"},
+    "PHL": {"CountryName": "Philippines", "SubRegion": "Maritime ASEAN", "Capital": "Manila", "ISO2": "PH", "Latitude": 12.8797, "Longitude": 121.7740, "MemberStatus": "Full Member", "DataNote": ""},
+    "SGP": {"CountryName": "Singapore", "SubRegion": "Maritime ASEAN", "Capital": "Singapore", "ISO2": "SG", "Latitude": 1.3521, "Longitude": 103.8198, "MemberStatus": "Full Member", "DataNote": "High-income city-state — GDP per capita and debt metrics are atypically high"},
+    "THA": {"CountryName": "Thailand", "SubRegion": "Mainland ASEAN", "Capital": "Bangkok", "ISO2": "TH", "Latitude": 15.8700, "Longitude": 100.9925, "MemberStatus": "Full Member", "DataNote": ""},
+    "VNM": {"CountryName": "Viet Nam", "SubRegion": "Mainland ASEAN", "Capital": "Hanoi", "ISO2": "VN", "Latitude": 14.0583, "Longitude": 108.2772, "MemberStatus": "Full Member", "DataNote": ""},
+    "TLS": {"CountryName": "Timor-Leste", "SubRegion": "Observer Candidate", "Capital": "Dili", "ISO2": "TL", "Latitude": -8.5569, "Longitude": 125.5603, "MemberStatus": "Observer Candidate", "DataNote": "Oil-dependent economy — GDP indicators highly volatile"}
 }
 
 def extract_unit(series_name):
@@ -87,14 +87,12 @@ def resolve_country_code(text):
     """Accurately extract country ISO3 code using bracket regex or exact dictionary match."""
     if not text:
         return None
-    # 1. Try bracket extraction e.g. "Malaysia [MY]" -> "MY"
     bracket_match = re.search(r'\[([A-Z]{2,3})\]', text)
     if bracket_match:
         iso_raw = bracket_match.group(1)
         if iso_raw in COUNTRY_CODE_MAP:
             return COUNTRY_CODE_MAP[iso_raw]
     
-    # 2. Try exact name match
     cleaned_text = re.sub(r'\[.*?\]', '', text).strip()
     if cleaned_text in COUNTRY_CODE_MAP:
         return COUNTRY_CODE_MAP[cleaned_text]
@@ -102,11 +100,6 @@ def resolve_country_code(text):
     return None
 
 def parse_tourism_file(file_path, domain):
-    """
-    Specialized parser for matrix-style dulich-Data.csv.
-    Ignores summary rows ('Total Country (World)', 'Total Intra-ASEAN').
-    Uses precise bracket ISO extraction to prevent substring mismatch.
-    """
     print(f"Processing Tourism Matrix: {os.path.basename(file_path)}")
     fact_rows = []
     flow_rows = []
@@ -146,7 +139,6 @@ def parse_tourism_file(file_path, domain):
             if not current_dest or not origin_col:
                 continue
 
-            # SKIP summary rows!
             if origin_col.startswith("Total "):
                 continue
 
@@ -169,22 +161,18 @@ def parse_tourism_file(file_path, domain):
                 if col_idx < len(row):
                     clean_num = clean_val(row[col_idx])
                     if clean_num is not None:
-                        # FIX: Skip self-referential rows (Origin == Destination)
                         if origin_code == dest_code:
                             continue
-                        # Flow record
                         flow_rows.append({
                             "DestinationCountryCode": dest_code,
                             "OriginCountryCode": origin_code,
                             "Year": yr,
                             "Visitors": clean_num
                         })
-                        # Accumulate total arrivals
                         key = (dest_code, yr)
                         tot_arrivals_agg[key] = tot_arrivals_agg.get(key, 0.0) + clean_num
 
         for (d_code, yr), tot_val in tot_arrivals_agg.items():
-            # FIX: resolve proper country name from metadata (not ISO code)
             proper_name = ASEAN_COUNTRIES_META.get(d_code, {}).get("CountryName", d_code)
             fact_rows.append({
                 "CountryCode": d_code,
@@ -193,7 +181,7 @@ def parse_tourism_file(file_path, domain):
                 "Value": tot_val
             })
             master_rows.append({
-                "CountryName": proper_name,  # FIX: use proper name, not code
+                "CountryName": proper_name,
                 "CountryCode": d_code,
                 "SeriesName": "Tổng lượt khách du lịch quốc tế nhập cảnh từ các nước ASEAN",
                 "SeriesCode": series_code_tot,
@@ -205,7 +193,7 @@ def parse_tourism_file(file_path, domain):
     return fact_rows, flow_rows, master_rows, indicator_dict
 
 def process_raw_data():
-    print("=== STARTING DATA PREPROCESSING (WITH AUDITED ACCURACY) ===")
+    print("=== STARTING DATA PREPROCESSING (PRODUCTION PIPELINE) ===")
     
     fact_rows = []
     flow_rows = []
@@ -315,12 +303,12 @@ def process_raw_data():
         writer.writeheader()
         writer.writerows(flow_rows)
 
-    # 2. DIM_COUNTRY
+    # 2. DIM_COUNTRY (All 9 Columns)
     dim_country_path = os.path.join(CLEANED_DIR, "Dim_Country.csv")
     dim_country_rows = []
     for code, cname in country_dict.items():
         meta = ASEAN_COUNTRIES_META.get(code, {
-            "CountryName": cname, "SubRegion": "ASEAN", "Capital": "Unknown", "ISO2": code[:2], "Latitude": 0.0, "Longitude": 0.0
+            "CountryName": cname, "SubRegion": "ASEAN", "Capital": "Unknown", "ISO2": code[:2], "Latitude": 0.0, "Longitude": 0.0, "MemberStatus": "Full Member", "DataNote": ""
         })
         dim_country_rows.append({
             "CountryCode": code,
@@ -329,10 +317,12 @@ def process_raw_data():
             "Capital": meta["Capital"],
             "ISO2": meta["ISO2"],
             "Latitude": meta["Latitude"],
-            "Longitude": meta["Longitude"]
+            "Longitude": meta["Longitude"],
+            "MemberStatus": meta["MemberStatus"],
+            "DataNote": meta["DataNote"]
         })
     with open(dim_country_path, mode='w', encoding='utf-8-sig', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=["CountryCode", "CountryName", "SubRegion", "Capital", "ISO2", "Latitude", "Longitude"])
+        writer = csv.DictWriter(f, fieldnames=["CountryCode", "CountryName", "SubRegion", "Capital", "ISO2", "Latitude", "Longitude", "MemberStatus", "DataNote"])
         writer.writeheader()
         writer.writerows(dim_country_rows)
 
@@ -351,19 +341,22 @@ def process_raw_data():
         writer.writeheader()
         writer.writerows(dim_indicator_rows)
 
-    # 4. DIM_DATE
+    # 4. DIM_DATE (All 7 Columns)
     dim_date_path = os.path.join(CLEANED_DIR, "Dim_Date.csv")
     dim_date_rows = []
+    max_year = max(years_set) if years_set else 2025
     for yr in sorted(list(years_set)):
         dim_date_rows.append({
             "Year": yr,
             "Date": f"{yr}-01-01",
             "YearLabel": f"Năm {yr}",
             "Decade": f"Thập kỷ {(yr // 10) * 10}s",
-            "Period": "2015-2020" if yr <= 2020 else "2021-2025"
+            "Period": "2015-2020" if yr <= 2020 else "2021-2025",
+            "DataStatus": "Actual" if yr <= 2023 else ("Preliminary" if yr == 2024 else "Forecast/Incomplete"),
+            "IsCurrentYear": (yr == max_year)
         })
     with open(dim_date_path, mode='w', encoding='utf-8-sig', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=["Year", "Date", "YearLabel", "Decade", "Period"])
+        writer = csv.DictWriter(f, fieldnames=["Year", "Date", "YearLabel", "Decade", "Period", "DataStatus", "IsCurrentYear"])
         writer.writeheader()
         writer.writerows(dim_date_rows)
 
