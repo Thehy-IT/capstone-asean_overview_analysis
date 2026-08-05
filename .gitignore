@@ -1,73 +1,93 @@
 # ==============================================================================
-# SENIOR STANDARD .gitignore FOR POWER BI & DATA ANALYTICS PROJECTS
+# CAPSTONE ASEAN OVERVIEW ANALYSIS - PRODUCTION .gitignore
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
-# 1. Power BI Project (PBIP) Specific
+# 1. Power BI & Power BI Project (PBIP) Rules
 # ------------------------------------------------------------------------------
-# Ignore local user settings, credentials, and connection information
+# Ignore local user settings, credentials, and cache in PBIP
 **/.pbi/localSettings.json
 **/.pbi/cache.json
-# Ignore backups and auto-recovery files
+**/.pbi/userSettings.json
+
+# Power BI temporary lock files and backups
 *.pbix.bak
 *.pbit.bak
 ~$*.pbix
-# (Optional) Ignore large PBIX files if you are strictly using PBIP format
-# *.pbix
+~$*.pbit
 
 # ------------------------------------------------------------------------------
-# 2. Data Files (Raw, Cleaned, External) - NEVER COMMIT SENSITIVE/LARGE DATA
+# 2. Microsoft Office Temporary Lock Files (~$*)
 # ------------------------------------------------------------------------------
-# /02_Data/**/*.csv
-# /02_Data/**/*.xlsx
-# /02_Data/**/*.xls
-/02_Data/**/*.json
-/02_Data/**/*.parquet
-/02_Data/**/*.xml
-/02_Data/**/*.sqlite
-/02_Data/**/*.db
-# (Optional) Nếu bạn có file metadata mẫu nhỏ muốn đưa lên git, có thể uncomment dòng dưới
-# !/02_Data/Metadata/*.csv
+~$*.docx
+~$*.xlsx
+~$*.pptx
+~$*.doc
+~$*.xls
+~$*.ppt
 
 # ------------------------------------------------------------------------------
-# 3. Python & Jupyter (Data Preprocessing & Analysis)
+# 3. Python, Virtual Environments & Jupyter Checkpoints
 # ------------------------------------------------------------------------------
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual Environments
+# Virtual environments
 venv/
 env/
 .venv/
 .env/
+ENV/
 
-# Jupyter Notebook checkpoints & temp files
+# Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
 
 # ------------------------------------------------------------------------------
-# 4. OS Generated Files
+# 4. Databases, Archives & Logs
 # ------------------------------------------------------------------------------
+*.sqlite
+*.sqlite3
+*.db
+*.log
+*.tmp
+*.temp
+*.bak
+*.zip
+*.tar.gz
+*.rar
+
+# ------------------------------------------------------------------------------
+# 5. OS & Editor Specific Files
+# ------------------------------------------------------------------------------
+# macOS
 .DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
-ehthumbs.db
+
+# Windows
 Thumbs.db
+ehthumbs.db
 desktop.ini
 
-# ------------------------------------------------------------------------------
-# 5. IDEs and Editors
-# ------------------------------------------------------------------------------
+# IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
+*.user
 
 # ------------------------------------------------------------------------------
-# 6. Credentials & Environment Variables
+# 6. Sensitive Credentials & Environment Variables
 # ------------------------------------------------------------------------------
 .env
 .env.local
@@ -78,16 +98,3 @@ secrets.json
 credentials.json
 *.pem
 *.key
-
-# ------------------------------------------------------------------------------
-# 7. Temp and Exported Files
-# ------------------------------------------------------------------------------
-# Bỏ qua các file logs và file rác
-*.log
-*.tmp
-*.temp
-*.bak
-
-# Tránh đẩy các file export dung lượng lớn trừ khi cần thiết
-# /05_PowerBI/Export/**/*.pdf
-# /05_PowerBI/Export/**/*.pptx
